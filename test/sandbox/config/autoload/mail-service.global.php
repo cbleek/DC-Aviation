@@ -19,7 +19,7 @@
 $transport = 'file';
 
 /**
- * Fully-qualified classname or short name resolvable via Laminas\Mail\Protocol\SmtpLoader.
+ * Fully-qualified classname or short name resolvable via Zend\Mail\Protocol\SmtpLoader.
  * Typically, this will be one of “smtp”, “plain”, “login”, or “crammd5”, and defaults to “smtp”.
  */
 $auth = 'login';
@@ -65,7 +65,7 @@ $config = [
             'options' => [
                 'username' => $username,
                 'transportClass' => $transport,
-                'path' => realpath(__DIR__.'/../../sandbox').'/build/mails'
+                'path' => realpath(__DIR__.'/../../../../').'/build/mails'
             ],
         ],
     ]

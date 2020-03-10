@@ -1,28 +1,34 @@
-DemoSkin
+Aviation
 ========
 
-Skin for the Yawik Demo at https://yawik.org/demo/
+Skin DC Aviation
 
 Build status:
-[![Build Status](https://travis-ci.org/yawik/DemoSkin.svg?branch=master)](https://travis-ci.org/yawik/DemoSkin)
-[![Latest Stable Version](https://poser.pugx.org/yawik/demo-skin/v/stable)](https://packagist.org/packages/yawik/demo-skin)
-[![Total Downloads](https://poser.pugx.org/yawik/demo-skin/downloads)](https://packagist.org/packages/yawik/demo-skin)
-[![License](https://poser.pugx.org/yawik/demo-skin/license)](https://packagist.org/packages/yawik/demo-skin)
+[![Build Status](https://travis-ci.org/cbleek/Aviation.svg?branch=master)](https://travis-ci.org/cbleek/Aviation)
+[![Latest Stable Version](https://poser.pugx.org/cbleek/aviation/v/stable)](https://packagist.org/packages/yawik/aviation)
+[![Total Downloads](https://poser.pugx.org/cbleek/aviation/downloads)](https://packagist.org/packages/yawik/aviation)
+[![License](https://poser.pugx.org/cbleek/aviation/license)](https://packagist.org/packages/yawik/demo-skin)
 
 Installation
 ------------
 
-You can install this skin into your running YAWIK by:
+you can download and use this skin by:
 
 ```sh
-$ composer --no-dev create-project yawik/standard:dev-master MyYawik
-$ cd MyYawik
-$ composer require yawik/demo-skin
+$ git clone https://github.com/cbleek/Aviation.git MyPath
+$ cd MyPath
+$ composer install
 ```
 
+The module comes with a sandbox. You can start the sandbox by:
 
+```sh
+$ composer serve
+```
 
-To activate the module, create a file in you `YAWIK/config/autoload` directory
+after that, you should be able to open http://localhost:8000
+
+To activate the module, create a file in you `test/sandbox/config/autoload` directory
 
 ```
 <?php
