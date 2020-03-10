@@ -7,7 +7,7 @@ require 'recipe/zend_framework.php';
 set('application', 'YAWIK');
 
 // Project repository
-set('repository', 'https://github.com/yawik/DemoSkin.git');
+set('repository', 'https://github.com/cbleek/Aviation.git');
 
 // Shared files/dirs between deploys
 add('shared_files', [
@@ -33,7 +33,7 @@ set('default_stage', 'prod');
 
 // Hosts
 
-host('yawik.org')
+host('aviation.yawik.org')
     ->user('yawik')
     ->stage('prod')
     ->multiplexing(false)
