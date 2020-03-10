@@ -8,7 +8,7 @@
  */
   
 /** */
-namespace YawikDemoSkin\Form;
+namespace Aviation\Form;
 
 use Jobs\Form\JobDescription as ParentJobDescription;
 
@@ -26,7 +26,7 @@ class JobsDescription extends ParentJobDescription
 
         $this->setForms([
             'classification' => [
-                'type' => 'YawikDemoSkin/ClassificationForm',
+                'type' => 'Aviation/ClassificationForm',
                 'property' => 'templateValues',
             ]
         ]);

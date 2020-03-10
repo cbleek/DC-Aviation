@@ -1,16 +1,16 @@
 <?php
 
 
-\YawikDemoSkin\Module::$isLoaded = true;
+\Aviation\Module::$isLoaded = true;
 
 /**
- * create a config/autoload/YawikDemoSkin.global.php and put modifications there
+ * create a config/autoload/Aviation.global.php and put modifications there
  */
 
 return array(
     'service_manager' => [
         'factories' => [
-            'Auth/Dependency/Manager' => 'YawikDemoSkin\Factory\Dependency\ManagerFactory',
+            'Auth/Dependency/Manager' => 'Aviation\Factory\Dependency\ManagerFactory',
         ],
     ],
     'view_manager' => array(
@@ -38,7 +38,7 @@ return array(
 
              'form_elements' => [
                  'invokables' => [
-                     'Jobs/Description' => 'YawikDemoSkin\Form\JobsDescription',
+                     'Jobs/Description' => 'Aviation\Form\JobsDescription',
                  ],
              ],
 

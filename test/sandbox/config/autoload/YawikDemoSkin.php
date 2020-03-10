@@ -1,6 +1,6 @@
 <?php
 
-if (!\YawikDemoSkin\Module::$isLoaded) {
+if (!\Aviation\Module::$isLoaded) {
     return array();
 }
 

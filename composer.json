@@ -1,24 +1,16 @@
 {
     "type": "yawik-module",
-    "name": "yawik/demo-skin",
-    "description": "demo-skin modifies the startpage of a yawik installation.",
+    "name": "yawik/aviation",
+    "description": "aviation modifies the startpage of a yawik installation.",
     "license": "MIT",
     "authors": [
         {
             "name": "Carsten Bleek",
             "email": "bleek@cross-solution.de"
-        },
-        {
-            "name": "Mathias Gelhausen",
-            "email": "gelhausen@cross-solution.de"
-        },
-        {
-            "name": "Anthonius Munthi",
-            "email": "me@itstoni.com"
         }
     ],
     "support": {
-        "source": "https://github.com/yawik/DemoSkin"
+        "source": "https://github.com/cbleek/Aviation"
     },
     "keywords": [
         "yawik",
@@ -37,9 +29,6 @@
         "yawik/organizations": "^0.34",
         "yawik/pdf": "^0.34",
         "yawik/composer-plugin": "^1.0",
-        "yawik/solr": "^0.9",
-        "yawik/jobs-by-mail": "^0.3",
-        "yawik/orders": "^0.3.2",
         "laminas/laminas-dependency-plugin": "^1.0"
     },
     "require-dev": {
@@ -48,7 +37,7 @@
     },
     "autoload": {
         "psr-4": {
-            "YawikDemoSkin\\": "src/"
+            "Aviation\\": "src/"
         }
     },
     "autoload-dev": {
@@ -78,7 +67,7 @@
     },
     "extra": {
         "zf": {
-            "module": "YawikDemoSkin"
+            "module": "Aviation"
         },
         "branch-alias": {
             "dev-develop": "0.32-dev"

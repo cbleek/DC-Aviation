@@ -15,13 +15,13 @@ module.exports = function(grunt) {
                 files: [
                     {
                         src: [
-                            targetDir+"/modules/YawikDemoSkin/less/YawikDemoSkin.less",
+                            targetDir+"/modules/Aviation/less/Aviation.less",
                             "./node_modules/select2/dist/css/select2.min.css",
                             "./node_modules/pnotify/dist/pnotify.css",
                             "./node_modules/pnotify/dist/pnotify.buttons.css",
                             "./node_modules/bootsrap3-dialog/dist/css/bootstrap-dialog.css"
                         ],
-                        dest: targetDir+"/modules/YawikDemoSkin/dist/YawikDemoSkin.css"
+                        dest: targetDir+"/modules/Aviation/dist/Aviation.css"
                     }
                 ]
             },
@@ -30,8 +30,8 @@ module.exports = function(grunt) {
             demo: {
                 files: [
                     {
-                        dest: targetDir+'/modules/YawikDemoSkin/dist/YawikDemoSkin.min.css',
-                        src: targetDir+'/modules/YawikDemoSkin/dist/YawikDemoSkin.css'
+                        dest: targetDir+'/modules/Aviation/dist/Aviation.min.css',
+                        src: targetDir+'/modules/Aviation/dist/Aviation.css'
                     }
                 ]
             }

@@ -35,7 +35,7 @@ $this->configHeadScript()->prependFile($this->basepath('dist/js/core.js'));
 $this->configHeadScript()->appendScript('var lang="' . $this->params('lang') . '";'
     . 'var basePath="' . $this->basePath() . '";');
 
-$this->headLink()->prependStylesheet($this->basePath('modules/YawikDemoSkin/dist/YawikDemoSkin.css'));
+$this->headLink()->prependStylesheet($this->basePath('modules/Aviation/dist/Aviation.css'));
 
 foreach ($languages as $lang) {
     $this->headLink()->appendAlternate(
@@ -54,10 +54,10 @@ foreach ($languages as $lang) {
     <?php echo $this->configHeadScript() ?>
     <?php echo $this->headLink() ?>
     <?php echo $this->headStyle() ?>
-    <link rel="icon" href="<?=$this->basePath('modules/YawikDemoSkin/img/cropped-yawik-small-32x32.jpg')?>" sizes="32x32" />
-    <link rel="icon" href="<?=$this->basePath('modules/YawikDemoSkin/img/cropped-yawik-small-192x192.jpg')?>" sizes="192x192" />
-    <link rel="apple-touch-icon-precomposed" href="<?=$this->basePath('modules/YawikDemoSkin/img/cropped-yawik-small-180x180.jpg')?>" />
-    <meta name="msapplication-TileImage" content="<?=$this->basePath('modules/YawikDemoSkin/img/cropped-yawik-small-270x270.jpg')?>" />
+    <link rel="icon" href="<?=$this->basePath('modules/Aviation/img/cropped-yawik-small-32x32.jpg')?>" sizes="32x32" />
+    <link rel="icon" href="<?=$this->basePath('modules/Aviation/img/cropped-yawik-small-192x192.jpg')?>" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="<?=$this->basePath('modules/Aviation/img/cropped-yawik-small-180x180.jpg')?>" />
+    <meta name="msapplication-TileImage" content="<?=$this->basePath('modules/Aviation/img/cropped-yawik-small-270x270.jpg')?>" />
 </head>
 <body>
 <a class="sr-only" href="#content">Skip to main content</a>
@@ -127,27 +127,16 @@ foreach ($languages as $lang) {
  <div class="container">
     <div class="row">
            <div class="col-md-4">
-               <small>
-                   <a href="http://www.jetbrains.com/phpstorm/">
-                       <img src="<?php echo $this->basePath('modules/YawikDemoSkin/img/logo_PhpStorm.svg')?>"
-                           alt="Developed with PhpStorm" border="0" style="height: 30px"/></a>
-               </small>
+
            </div>
-	   <div class="col-md-4"><center>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="LB3Q3ES348HHG">
-<input type="image" src="https://www.paypalobjects.com/en_US/DE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-</form></center>
-           </div>
+	        <div class="col-md-4">
+            </div>
            <div class="col-md-4" align="right">
                 <span class="pull-right"><small>
-                        &copy; 2013-<?php echo date("Y")?> <a href="http://cross-solution.de">
-                            Cross
-                            Solution</a>.
+                        &copy; <?php echo date("Y")?> <a href="http://cross-solution.de">
+                            Aviation</a>.
                         | <a href="<?php echo  $this->basePath($this->params('lang').'/content/imprint')?>"><?php echo $this->translate('Imprint') ?></a>
-                        | <?php echo $this->moduleVersion('YawikDemoSkin')->full() ?><br/>
+                        | <?php echo $this->moduleVersion('Aviation')->full() ?><br/>
                         Powered by <a href="http://yawik.org">YAWIK</a> <?=$this->moduleVersion('Core') ?>
                  </small></span>
            </div>

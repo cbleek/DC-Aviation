@@ -1,6 +1,6 @@
 <?php
 
-namespace YawikDemoSkin;
+namespace Aviation;
 
 use Core\ModuleManager\Feature\VersionProviderInterface;
 use Core\ModuleManager\Feature\VersionProviderTrait;

@@ -4,7 +4,7 @@
  */
 
 /** */
-namespace YawikDemoSkin\Dependency;
+namespace Aviation\Dependency;
 
 use Auth\Dependency\Manager as AuthDependencyManager;
 use Auth\Entity\User;
