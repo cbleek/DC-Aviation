@@ -1,0 +1,9 @@
+*~
+behat.yml
+build.properties
+view/.*
+/vendor/
+package-lock.json
+node_modules
+public/dist
+
