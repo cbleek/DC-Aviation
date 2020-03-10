@@ -4,22 +4,22 @@ module.exports = function(grunt) {
 
     grunt.config.merge({
         less: {
-            demo: {
+            aviation: {
                 options: {
                     compress: false,
                     modifyVars: {
-                        "fa-font-path": "/demo/dist/fonts",
-                        "flag-icon-css-path": "/demo/dist/flags"
+                        "fa-font-path": "/dist/fonts",
+                        "flag-icon-css-path": "/dist/flags"
                     }
                 },
                 files: [
                     {
                         src: [
-                            targetDir+"/modules/Aviation/less/Aviation.less",
                             "./node_modules/select2/dist/css/select2.min.css",
                             "./node_modules/pnotify/dist/pnotify.css",
                             "./node_modules/pnotify/dist/pnotify.buttons.css",
-                            "./node_modules/bootsrap3-dialog/dist/css/bootstrap-dialog.css"
+                            "./node_modules/bootsrap3-dialog/dist/css/bootstrap-dialog.css",
+                            targetDir+"/modules/Aviation/less/Aviation.less"
                         ],
                         dest: targetDir+"/modules/Aviation/dist/Aviation.css"
                     }
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
             },
         },
         cssmin: {
-            demo: {
+            aviation: {
                 files: [
                     {
                         dest: targetDir+'/modules/Aviation/dist/Aviation.min.css',
@@ -38,5 +38,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('yawik:demo',['copy','less','concat','uglify','cssmin']);
+    grunt.registerTask('yawik:aviation',['copy','less','concat','uglify','cssmin']);
 };

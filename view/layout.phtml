@@ -20,7 +20,7 @@ $notifications = $this->partial('core/notifications');
 
 // set default page title
 
-$this->headTitle($this->translate('YAWIK DEMO'))->setSeparator(' - ')->setAutoEscape(false);
+$this->headTitle($this->translate('Aviation'))->setSeparator(' - ')->setAutoEscape(false);
 
 // set default keywords
 
@@ -64,15 +64,14 @@ foreach ($languages as $lang) {
 <header role="banner">
     <div class=" navbar-inverse">
         <div class="navbar-header">
-            <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse"
-                    type="button">
+            <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand hidden-xs" href="<?php echo $this->basepath('/' . $this->params('lang')) ?>">YAWIK DEMO</a>
-            <a class="navbar-brand visible-xs" href="<?php echo $this->basepath('/' . $this->params('lang')) ?>">Y</a>
+            <a class="navbar-brand hidden-xs" href="<?php echo $this->basepath('/' . $this->params('lang')) ?>">Aviation</a>
+            <a class="navbar-brand visible-xs" href="<?php echo $this->basepath('/' . $this->params('lang')) ?>">A</a>
         </div>
         <nav id="main-navigation" class="navbar-collapse collapse navbar-collapse" role="navigation">
             <?php
@@ -92,8 +91,6 @@ foreach ($languages as $lang) {
     <!-- SIDEBAR -->
     <nav id="sidebar">
        <?=$this->languageSwitcher()?>
-        <p><a href="https://www.transifex.com/projects/p/yawik/">
-                <?php echo $this->translate('Help to translate YAWIK'); ?></a></p>
 
         <div id="sub-nav">
             <?php

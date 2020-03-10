@@ -1,6 +1,6 @@
 {
-  "name": "yawik-demo-skin",
-  "version": "0.32.0",
+  "name": "yawik-aviation-skin",
+  "version": "0.0.1",
   "scripts": {
     "postinstall": "grunt"
   },
