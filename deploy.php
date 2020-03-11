@@ -37,7 +37,7 @@ host('aviation.yawik.org')
     ->user('yawik')
     ->stage('prod')
     ->multiplexing(false)
-    ->set('deploy_path', '/var/www/production')
+    ->set('deploy_path', '/home/yawik/production')
     ->set('writableusesudo', true);
 
 // [Optional] if deploy fails automatically unlock.
