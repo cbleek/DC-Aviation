@@ -9,7 +9,6 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="<?= $this->headTitle; ?> - <?= $this->organizationName;?>" />
     <link rel="stylesheet" href="<?php echo $this->basePath("modules/Aviation/templates/job.css")?>" type="text/css">
-    <link href='//fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <style>
         form > div:hover {
             background-color: #eee;
@@ -22,10 +21,13 @@
 </head>
 <body>
 <div class="container">
+    <div class="header"><img src="/modules/Aviation/templates/1-DC-Aviation-Header.png"></div>
+    <div class="visual"><img src="/modules/Aviation/templates/plane.jpg"></div>
     <main itemscope itemtype="http://schema.org/JobPosting">
         <!--
           see: http://yawik.readthedocs.io/en/latest/modules/jobs/index.html#job-templates
         -->
+        
         <div class="row">
             <div class="one-half column" itemscope itemtype="http://schema.org/Organization">
                 <div itemprop="logo">
@@ -36,25 +38,26 @@
             </div>
         </div>
 
-        <p ><?=$this->descriptionEditable ?></p>
+        <p><?=$this-> descriptionEditable ?></p>
         <div class="row">
-            <div class="twelve columns" itemprop="title">
+            <div class="twelve columns title" itemprop="title">
                 <?php echo $this->title; ?>
             </div>
         </div>
         <div class="row">
-            <div class="two-thirds column">
+            <div class="six columns">
                 <div class="panel">
                     <div class="panel-heading"><h4><?=$this->translate($this->labelRequirements);?></h4></div>
                     <div class="panel-body" itemprop="responsibilities"><?=$this->requirements;?></div>
                 </div>
+            </div>
+            <div class="six columns">
                 <div class="panel">
                     <div class="panel-heading"><h4><?=$this->translate($this->labelQualifications);?></h4></div>
                     <div class="panel-body" itemprop="qualifications"><?=$this->qualifications;?></div>
                 </div>
-
             </div>
-            <div class="one-third column">
+            <div class="twelve columns">
                 <div class="panel">
                     <div class="panel-heading"><h4><?=$this->translate($this->labelBenefits);?></h4></div>
                     <div class="panel-body" itemprop="jobBenefits"><?=$this->benefits;?></div>
@@ -77,16 +80,21 @@
             <div class="twelve columns">
             </div>
         </div>
-        <?=$this->jobApplyButtons(
+        <p class="claim">Suchen Sie eine neue berufliche Herausforderung in einem wachstumsstarken Unternehmen? Dann lernen Sie DC Aviation kennen und starten Sie mit uns durch. Wir freuen uns auf Ihre Bewerbung. </p>
+    </main>
+    <div class="footer-bar">
+        <div class="plane"></div>
+        <div class="apply">
+            <?=$this->jobApplyButtons(
             $this->applyData,
             [
                 'sendImmediately' => true,
                 'oneClickOnly' => false,
-                'defaultLabel' => 'Click here to apply',
+                'defaultLabel' => 'JETZT ONLINE BEWERBEN',
                 'oneClickLabel' => null
             ]
-        )?>
-    </main>
+        )?></div>
+    </div>
 </div>
 </body>
 </html>
