@@ -12,7 +12,8 @@ env:
 matrix:
   fast_finish: true
   include:
-  - php: '7.2'
+  - php: '7.4'
+    env: COVERAGE=no
 services:
 - mongodb
 before_install:
@@ -26,7 +27,7 @@ before_install:
 - pecl channel-update pecl.php.net
 - curl -LO https://deployer.org/deployer.phar
 - chmod +x deployer.phar
-- ssh yawik@aviation.yawik.org ls
+- ssh yawik@aviation.yawik.org ls -la
 install:
 - pecl install -f ${PECLMONGO}
 - export HASH=de1d724299780d927cb9ed14268449ac8a28204b;
@@ -43,11 +44,10 @@ before_script:
 - if [[ $COVERAGE != yes ]]; then composer run start-selenium --timeout=0 > /dev/null
   2>&1 & sleep 5; composer run serve --timeout=0 > /dev/null 2>&1 & sleep 3; fi
 script:
-- "./vendor/bin/behat"
+- "ls -la"
 after_failure:
 - ./vendor/lakion/mink-debug-extension/travis/tools/upload-textfiles "build/behat/*.log"
 - ./vendor/lakion/mink-debug-extension/travis/tools/upload-textfiles "log/*.log"
 - ./vendor/lakion/mink-debug-extension/travis/tools/upload-textfiles "log/tracy/*.*"
 - IMGUR_CLIENT_ID=bec050c54e1bb52 ./vendor/bin/imgur-uploader build/behat/*.png
-- ls -l
 
