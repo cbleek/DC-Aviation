@@ -647,3 +647,6 @@ input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #fff;
 }
+ul {
+  list-style-image: url('bullet.png');
+}

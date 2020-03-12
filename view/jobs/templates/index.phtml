@@ -2,13 +2,13 @@
 <html>
 <head>
     <?=$this->jsonLd($this->job)?>
-    <title><?=$this->headTitle?></title>
+    <title><?=strip_tags($this->headTitle)?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta property="og:url" content="<?= $this->uriJob;?>" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="<?= $this->headTitle; ?> - <?= $this->organizationName;?>" />
-    <link rel="stylesheet" href="<?php echo $this->basePath("modules/Aviation/templates/job.css")?>" type="text/css">
+    <meta property="og:title" content="<?=strip_tags($this->headTitle); ?> - <?=$this->organizationName;?>" />
+    <link rel="stylesheet" href="<?=$this->basePath("modules/Aviation/templates/job.css")?>" type="text/css">
     <style>
         form > div:hover {
             background-color: #eee;
@@ -27,18 +27,8 @@
         <!--
           see: http://yawik.readthedocs.io/en/latest/modules/jobs/index.html#job-templates
         -->
-        
-        <div class="row">
-            <div class="one-half column" itemscope itemtype="http://schema.org/Organization">
-                <div itemprop="logo">
-                    <img src="<?= $this->uriLogo?>" alt="<?= $this->organizationName?>">
-                </div>
-            </div>
-            <div class="one-half column right">
-            </div>
-        </div>
 
-        <p><?=$this-> descriptionEditable ?></p>
+        <p><?=$this->descriptionEditable ?></p>
         <div class="row">
             <div class="twelve columns title" itemprop="title">
                 <?php echo $this->title; ?>

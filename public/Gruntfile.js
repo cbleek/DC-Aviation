@@ -25,6 +25,14 @@ module.exports = function(grunt) {
                     }
                 ]
             },
+            jobs: {
+                files: [
+                    {
+                        src: "./view/jobs/templates/less/job.less",
+                        dest: "./view/jobs/templates/job.css"
+                    }
+                ]
+            }
         },
         cssmin: {
             aviation: {
@@ -38,5 +46,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('yawik:aviation',['copy','less','concat','uglify','cssmin']);
+    grunt.registerTask('yawik:aviation',['copy','less','less:job','concat','uglify','cssmin']);
 };
