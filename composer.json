@@ -47,7 +47,7 @@
     },
     "config": {
         "platform": {
-            "ext-mongo": "1.6.16"
+            "ext-mongo": "1.7"
         },
         "process-timeout": 0
     },
