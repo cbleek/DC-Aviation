@@ -20,6 +20,10 @@ body{
     font-weight: normal;
     color:#575756;
 }
+.header img, .visual img{
+  width: 100%;
+  height: auto;
+}
 .container {
     width: 100%;
     max-width: 904px;
@@ -32,55 +36,51 @@ body{
 main {
     padding: 34px 56px;
 }
-
-footer,
-address {
-    text-align: right;
-}
 h1 {
-    color: @primary-color;
+  color: #9b0e12 !important;
+  line-height: normal !important;
+  font-size: 16pt !important;
+  font-weight: bold !important;
 }
 .apply {
     text-align: center;
 }
 h4 {
-    font-size: 13pt;
-    color: #575756;
-    font-style: normal;
-    font-weight: bold;
+  font-size: 13pt !important;
+  color: #575756 !important;
+  font-style: normal !important;
+  font-weight: bold !important;
 }
-.container {
-    width: 100%;
-    max-width: 904px;
-    margin: 0 auto;
-    padding: 1px !important;
-    box-sizing: border-box;
-    border: 1px solid #575756;
-    margin-bottom: 20px;
-  }
-  .header{
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul li{
+  background-image: url('bullet.png'); 
+  background-repeat: no-repeat;
+  background-position: 0 7px;
+  margin: 0;
+  padding: 0 0 0 17px;
+}
+.header{
    margin: 0;
    line-height: 0;
   }
-  .visual{
+.visual{
   margin: 0;
   }
-  .title{
-    font-size: 16pt;
-    font-style: normal;
-    line-height: normal;
-    font-weight: bold;
-    color: #9b0e12;
-    margin-bottom: 30px;
-  }
-  .footer-bar{
-    background-image: url(footer-bar.png);
-  }
-  .plane{
-    background-image: url(logo_plane.png);
-    width: 100px;
-    height: 44px;
-  }
+.title{
+  font-size: 16pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: bold;
+  color: #9b0e12;
+  margin-bottom: 30px;
+}
+.footer-bar{
+  background-image: url(footer-bar.png);
+}
 .button.button-primary,
 button.button-primary {
   color: #fff;
@@ -90,7 +90,68 @@ input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #fff;
 }
-
-ul {
-  list-style-image: url('bullet.png');
+.footer-container{
+  width: 37%;
+  margin: 0 auto;
+}
+.plane{
+  float: left;
+  background: none;
+  width: 104px;
+  margin: 5px 0 4px 0;
+  & img{
+    width: 93%;
+    height: auto;
+  }
+}
+.apply{
+  float: left;
+  margin-top: 5px;
+}
+.button, button {
+  display: inline-block;
+  height: 38px;
+  padding: 0 10px 0 0;
+  text-align: center;
+  font-size: 11pt;
+  font-weight: bold;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.company{
+  padding: 0px 56px;
+}
+address{
+  font-style: normal;
+  float: left;
+  text-align: left;
+}
+.linkedin{
+  float: right;
+}
+@media only screen and (max-width: 600px) {
+  body {
+      margin: 0px;
+      padding: 0px;
+  }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    margin-bottom: 10px;
+  }
+  main, .company {
+    padding: 0px 10px;
+}
+h4{
+    margin-top: 3.555556%;
+    margin-bottom: 1%;
+}
 }
