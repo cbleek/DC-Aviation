@@ -52,18 +52,6 @@
                     <div class="panel-heading"><h4><?=$this->translate($this->labelBenefits);?></h4></div>
                     <div class="panel-body" itemprop="jobBenefits"><?=$this->benefits;?></div>
                 </div>
-                <div itemscope itemtype="http://schema.org/Organization">
-                    <strong itemprop="name">
-                        <?= $this->organizationName?>
-                    </strong><br/>
-                    <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                        <span itemprop="streetAddress"><?=$this->street?></span><br>
-                        <span itemprop="postalCode"><?=$this->postalCode?></span>
-                        <span itemprop="addressLocality"><?=$this->city?></span>
-                        <br><br>
-                        <span itemprop="telephone"><?=$this->phone?></span>
-                    </address>
-                </div>
             </div>
         </div>
         <div class="row">
@@ -73,18 +61,36 @@
         <p class="claim">Suchen Sie eine neue berufliche Herausforderung in einem wachstumsstarken Unternehmen? Dann lernen Sie DC Aviation kennen und starten Sie mit uns durch. Wir freuen uns auf Ihre Bewerbung. </p>
     </main>
     <div class="footer-bar">
-        <div class="plane"></div>
-        <div class="apply">
-            <?=$this->jobApplyButtons(
-            $this->applyData,
-            [
+        <div class="footer-container">
+            <div class="plane"><img src="/modules/Aviation/templates/logo_plane.png"></div>   
+            <div class="apply">
+                <?=$this->jobApplyButtons(
+                $this->applyData,
+                [
                 'sendImmediately' => true,
                 'oneClickOnly' => false,
                 'defaultLabel' => 'JETZT ONLINE BEWERBEN',
                 'oneClickLabel' => null
-            ]
-        )?></div>
+                ]
+                )?>
+            </div>
+            <br clear="all">
+        </div>
     </div>
+    <div class="company" itemscope="" itemtype="http://schema.org/Organization">
+            <br>
+            <address itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                <span itemprop="name"><?= $this->organizationName?></span>
+                <br />
+                <span itemprop="streetAddress"><?=$this->street?></span><br>
+                <span itemprop="postalCode"><?=$this->postalCode?></span>
+                <span itemprop="addressLocality"><?=$this->city?></span>
+                <br><br>
+                <span itemprop="telephone"><?=$this->phone?></span>
+            </address>
+            <div class="linkedin"><img src="/modules/Aviation/templates/linkedin.png"></div>
+            <br clear="all">
+        </div>
 </div>
 </body>
 </html>
