@@ -1,5 +1,8 @@
 <?php
 
+declare(strict_types=1);
+
+namespace Aviation;
 
 \Aviation\Module::$isLoaded = true;
 
@@ -22,21 +25,27 @@ return array(
             'jobs/jobboard/index.ajax.phtml' => __DIR__ . '/../view/jobs/index.ajax.phtml',
             'templates/default/index' => __DIR__ . '/../view/jobs/templates/index.phtml',
             'iframe/iFrame.phtml' => __DIR__ . '/../view/jobs/iFrame.phtml',
-            ],
         ],
-        'translator' => array(
-            'translation_file_patterns' => array(
-                array(
-                    'type' => 'gettext',
-                    'base_dir' => __DIR__ . '/../language',
-                    'pattern' => '%s.mo',
-                    ),
+    ],
+    'translator' => array(
+        'translation_file_patterns' => array(
+            array(
+                'type' => 'gettext',
+                'base_dir' => __DIR__ . '/../language',
+                'pattern' => '%s.mo',
                 ),
-        ),
-        'form_elements' => [
-            'invokables' => [
-                'Jobs/Description' => 'Aviation\Form\JobsDescription',
-            ],
+            ),
+    ),
+    'form_elements' => [
+        'invokables' => [
+            'Jobs/Description' => 'Aviation\Form\JobsDescription',
         ],
+    ],
+
+    'event_manager' => [
+        'Jobs/JobContainer/Events' => ['listeners' => [
+            Listener\JobContainerInitListener::class => [\Core\Form\Event\FormEvent::EVENT_INIT, true]
+        ]],
+    ],
 
 );
