@@ -11,6 +11,34 @@ namespace Aviation;
  */
 
 return array(
+
+    'router' => [
+        'routes' => [
+            'lang' => [
+                'options' => [
+                    'defaults' => [
+                        'action' => 'dashboard',
+                    ],
+                ],
+            ],
+        ],
+    ],
+    'navigation' => [
+        'default' => [
+            'dashboard' => [
+                'visible' => false
+            ],
+        ],
+    ],
+    'acl' => [
+        'rules' => [
+            'recruiter' => [
+                'allow' => [
+                    'route/lang'
+                ]
+            ]
+        ]
+    ],
     'service_manager' => [
         'factories' => [
             'Auth/Dependency/Manager' => 'Aviation\Factory\Dependency\ManagerFactory',
