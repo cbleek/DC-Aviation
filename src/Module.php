@@ -90,6 +90,25 @@ class Module implements VersionProviderInterface
                 $sharedManager->attach($identifier, MvcEvent::EVENT_DISPATCH, $callback, -2 /*postDispatch, but before most of the other zf2 listener*/ );
             }
 
+            $eventManager->attach(
+                MvcEvent::EVENT_ROUTE,
+                function ($event) {
+                    $routeMatch = $event->getRouteMatch();
+
+                    if ($routeMatch->getMatchedRouteName() != 'lang') {
+                        return;
+                    }
+
+                    $router = $event->getRouter();
+                    $url = $router->assemble(['lang' => $routeMatch->getParam('lang')], ['name' => 'lang/dashboard']);
+                    $response = $event->getResponse();
+                    $response->getHeaders()->addHeaderLine('Location', $url);
+                    $response->setStatusCode(302);
+                    return $response;
+                },
+                1
+            );
+
         }
 
     }
