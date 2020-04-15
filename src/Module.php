@@ -2,6 +2,7 @@
 
 namespace Aviation;
 
+use Auth\Exception\UnauthorizedAccessException;
 use Core\ModuleManager\Feature\VersionProviderInterface;
 use Core\ModuleManager\Feature\VersionProviderTrait;
 use Core\ModuleManager\ModuleConfigLoader;
@@ -107,6 +108,29 @@ class Module implements VersionProviderInterface
                     return $response;
                 },
                 1
+            );
+
+            $eventManager->attach(
+                MvcEvent::EVENT_DISPATCH_ERROR,
+                function ($event) {
+                    $routeMatch = $event->getRouteMatch();
+                    if ($routeMatch->getMatchedRouteName() != 'lang/applications/detail'
+                        || !$event->getParam('exception') instanceof UnauthorizedAccessException
+                     ) {
+                        return;
+                    }
+
+                    $router = $event->getRouter();
+                    $request = $event->getRequest();
+                    $url = $router->assemble(['lang' => $routeMatch->getParam('lang')], ['name' => 'lang/auth']);
+                    $url .= '?ref=' . urlencode($request->getRequestUri());
+                    $response = $event->getResponse();
+                    $response->getHeaders()->addHeaderLine('Location', $url);
+                    $response->setStatusCode(302);
+                    $event->stopPropagation();
+                    return $response;
+                },
+                10
             );
 
         }
