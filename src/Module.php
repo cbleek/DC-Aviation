@@ -114,7 +114,8 @@ class Module implements VersionProviderInterface
                 MvcEvent::EVENT_DISPATCH_ERROR,
                 function ($event) {
                     $routeMatch = $event->getRouteMatch();
-                    if ($routeMatch->getMatchedRouteName() != 'lang/applications/detail'
+                    if (!$routeMatch
+                        || $routeMatch->getMatchedRouteName() != 'lang/applications/detail'
                         || !$event->getParam('exception') instanceof UnauthorizedAccessException
                      ) {
                         return;
