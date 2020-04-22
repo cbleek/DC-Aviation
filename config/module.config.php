@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Aviation;
 
+use Aviation\Listener\AutoAcceptTermsOfServiceListener;
+
 \Aviation\Module::$isLoaded = true;
 
 /**
@@ -11,6 +13,16 @@ namespace Aviation;
  */
 
 return array(
+
+    'doctrine' => [
+        'eventmanager' => [
+            'odm_default' => [
+                'subscribers' => [
+                    AutoAcceptTermsOfServiceListener::class,
+                ],
+            ],
+        ],
+    ],
 
     'navigation' => [
         'default' => [
@@ -33,6 +45,7 @@ return array(
             'jobs/jobboard/index.ajax.phtml' => __DIR__ . '/../view/jobs/index.ajax.phtml',
             'templates/default/index' => __DIR__ . '/../view/jobs/templates/index.phtml',
             'iframe/iFrame.phtml' => __DIR__ . '/../view/jobs/iFrame.phtml',
+            'jobs/form/preview' => __DIR__ . '/../view/jobs/preview.phtml',
         ],
     ],
     'translator' => array(
