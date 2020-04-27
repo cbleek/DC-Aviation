@@ -54,7 +54,7 @@ foreach ($languages as $lang) {
     <?php echo $this->configHeadScript() ?>
     <?php echo $this->headLink() ?>
     <?php echo $this->headStyle() ?>
-    <link rel="icon" href="<?=$this->basePath('modules/Aviation/img/cropped-yawik-small-32x32.jpg')?>" sizes="32x32" />
+    <link rel="icon" href="<?=$this->basePath('modules/Aviation/img/favicon.ico')?>" sizes="32x32" />
     <link rel="icon" href="<?=$this->basePath('modules/Aviation/img/cropped-yawik-small-192x192.jpg')?>" sizes="192x192" />
     <link rel="apple-touch-icon-precomposed" href="<?=$this->basePath('modules/Aviation/img/cropped-yawik-small-180x180.jpg')?>" />
     <meta name="msapplication-TileImage" content="<?=$this->basePath('modules/Aviation/img/cropped-yawik-small-270x270.jpg')?>" />
@@ -90,7 +90,7 @@ foreach ($languages as $lang) {
 <div class="container col-md-2">
     <!-- SIDEBAR -->
     <nav id="sidebar">
-       <?=$this->languageSwitcher()?>
+
 
         <div id="sub-nav">
             <?php
@@ -123,14 +123,14 @@ foreach ($languages as $lang) {
 <footer id="yk-footer">
  <div class="container">
     <div class="row">
-           <div class="col-md-4">
-
-           </div>
+       <div class="col-md-4">
+           <?=$this->languageSwitcher()?>
+       </div>
 	        <div class="col-md-4">
             </div>
            <div class="col-md-4" align="right">
                 <span class="pull-right"><small>
-                        &copy; <?php echo date("Y")?> <a href="http://cross-solution.de">
+                        &copy; <?php echo date("Y")?> <a href="https://www.dc-aviation.com">
                             Aviation</a>.
                         | <a href="<?php echo  $this->basePath($this->params('lang').'/content/imprint')?>"><?php echo $this->translate('Imprint') ?></a>
                         | <?php echo $this->moduleVersion('Aviation')->full() ?><br/>
