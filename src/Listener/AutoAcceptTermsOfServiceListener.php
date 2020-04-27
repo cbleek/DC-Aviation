@@ -8,6 +8,7 @@ use Doctrine\Common\EventSubscriber;
 use Doctrine\ODM\MongoDB\Event\LifecycleEventArgs;
 use Doctrine\ODM\MongoDB\Events;
 use Jobs\Entity\JobInterface;
+use Jobs\Entity\JobSnapshot;
 
 class AutoAcceptTermsOfServiceListener implements EventSubscriber
 {
@@ -22,7 +23,7 @@ class AutoAcceptTermsOfServiceListener implements EventSubscriber
     {
         $doc = $args->getDocument();
 
-        if (!$doc instanceof JobInterface) {
+        if (!$doc instanceof JobInterface || $doc instanceof JobSnapshot) {
             return;
         }
 
