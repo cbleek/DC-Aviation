@@ -43,3 +43,9 @@ host('aviation.yawik.org')
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
 
+// restart nodeserver
+after('cleanup', 'restart');
+
+task('restart', '
+    sudo /bin/systemctl restart php7.4-fpm.service;
+');
