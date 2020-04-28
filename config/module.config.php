@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Aviation;
 
 use Aviation\Listener\AutoAcceptTermsOfServiceListener;
+use Jobs\Listener\Events\JobEvent;
 
 \Aviation\Module::$isLoaded = true;
 
@@ -34,6 +35,7 @@ return array(
     'service_manager' => [
         'factories' => [
             'Auth/Dependency/Manager' => 'Aviation\Factory\Dependency\ManagerFactory',
+            Listener\AutoJobActivation::class => Listener\AutoJobActivationFactory::class,
         ],
     ],
     'view_manager' => [
@@ -66,6 +68,16 @@ return array(
     'event_manager' => [
         'Jobs/JobContainer/Events' => ['listeners' => [
             Listener\JobContainerInitListener::class => [\Core\Form\Event\FormEvent::EVENT_INIT, true]
+        ]],
+
+        'Jobs/Events' => ['listeners' => [
+            Listener\AutoJobActivation::class => [
+                'events' => [
+                    JobEvent::EVENT_JOB_CREATED => 'activateCreatedJob',
+                    JobEvent::EVENT_STATUS_CHANGED => 'activateChangedJob'
+                ],
+                'lazy' => true,
+            ],
         ]],
     ],
 
