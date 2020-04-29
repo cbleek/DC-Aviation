@@ -6,6 +6,7 @@ namespace Aviation;
 
 use Aviation\Listener\AutoAcceptTermsOfServiceListener;
 use Jobs\Listener\Events\JobEvent;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 
 \Aviation\Module::$isLoaded = true;
 
@@ -48,6 +49,14 @@ return array(
             'templates/default/index' => __DIR__ . '/../view/jobs/templates/index.phtml',
             'iframe/iFrame.phtml' => __DIR__ . '/../view/jobs/iFrame.phtml',
             'jobs/form/preview' => __DIR__ . '/../view/jobs/preview.phtml',
+        ],
+    ],
+    'view_helpers' => [
+        'factories' => [
+            View\Helper\FormatLocation::class => InvokableFactory::class
+        ],
+        'aliases' => [
+            'formatLocation' => View\Helper\FormatLocation::class,
         ],
     ],
     'translator' => array(
