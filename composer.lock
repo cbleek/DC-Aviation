@@ -5186,7 +5186,7 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -5277,7 +5277,7 @@
         },
         {
             "name": "symfony/dotenv",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dotenv.git",
@@ -5348,7 +5348,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -5412,7 +5412,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -5768,7 +5768,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -6022,16 +6022,16 @@
         },
         {
             "name": "yawik/applications",
-            "version": "v0.34.3",
+            "version": "v0.34.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/applications.git",
-                "reference": "e15378502d58b960282851b483e0299d07887e7d"
+                "reference": "0651677230cd4947f92099c2b9a55fe13f8ad6da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/applications/zipball/e15378502d58b960282851b483e0299d07887e7d",
-                "reference": "e15378502d58b960282851b483e0299d07887e7d",
+                "url": "https://api.github.com/repos/yawik/applications/zipball/0651677230cd4947f92099c2b9a55fe13f8ad6da",
+                "reference": "0651677230cd4947f92099c2b9a55fe13f8ad6da",
                 "shasum": ""
             },
             "require": {
@@ -6075,20 +6075,20 @@
                 "yawik",
                 "zf"
             ],
-            "time": "2020-05-22T12:58:21+00:00"
+            "time": "2020-06-12T12:10:33+00:00"
         },
         {
             "name": "yawik/auth",
-            "version": "v0.34.3",
+            "version": "v0.34.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/auth.git",
-                "reference": "f87d6885781200d0d6f495cdc2f8a39dda8c9cd9"
+                "reference": "064adddf8b149be797fee5089f6671ef0b0ae51d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/auth/zipball/f87d6885781200d0d6f495cdc2f8a39dda8c9cd9",
-                "reference": "f87d6885781200d0d6f495cdc2f8a39dda8c9cd9",
+                "url": "https://api.github.com/repos/yawik/auth/zipball/064adddf8b149be797fee5089f6671ef0b0ae51d",
+                "reference": "064adddf8b149be797fee5089f6671ef0b0ae51d",
                 "shasum": ""
             },
             "require": {
@@ -6134,7 +6134,7 @@
                 "yawik",
                 "zf"
             ],
-            "time": "2020-06-04T11:36:34+00:00"
+            "time": "2020-06-12T12:10:33+00:00"
         },
         {
             "name": "yawik/composer-plugin",
@@ -6204,16 +6204,16 @@
         },
         {
             "name": "yawik/core",
-            "version": "v0.34.3",
+            "version": "v0.34.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/core.git",
-                "reference": "b925644695d4db420c3e8908c84e7aedc2e6089c"
+                "reference": "9f50ffa3c77238e3be391050c698b2773750afa2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/core/zipball/b925644695d4db420c3e8908c84e7aedc2e6089c",
-                "reference": "b925644695d4db420c3e8908c84e7aedc2e6089c",
+                "url": "https://api.github.com/repos/yawik/core/zipball/9f50ffa3c77238e3be391050c698b2773750afa2",
+                "reference": "9f50ffa3c77238e3be391050c698b2773750afa2",
                 "shasum": ""
             },
             "require": {
@@ -6314,20 +6314,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-06-05T17:33:38+00:00"
+            "time": "2020-06-12T14:43:13+00:00"
         },
         {
             "name": "yawik/cv",
-            "version": "v0.34.3",
+            "version": "v0.34.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/cv.git",
-                "reference": "f5076785e709e093c12f9c1fe6bb766f080117c4"
+                "reference": "de08ccd5013a124079d3dbadcf53b13176497eaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/cv/zipball/f5076785e709e093c12f9c1fe6bb766f080117c4",
-                "reference": "f5076785e709e093c12f9c1fe6bb766f080117c4",
+                "url": "https://api.github.com/repos/yawik/cv/zipball/de08ccd5013a124079d3dbadcf53b13176497eaf",
+                "reference": "de08ccd5013a124079d3dbadcf53b13176497eaf",
                 "shasum": ""
             },
             "require": {
@@ -6370,25 +6370,25 @@
                 "module",
                 "yawik"
             ],
-            "time": "2020-02-17T19:11:37+00:00"
+            "time": "2020-06-12T12:10:33+00:00"
         },
         {
             "name": "yawik/geo",
-            "version": "1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/geo.git",
-                "reference": "569e6b4eb38cbf31f668bf9f00aafa61877d40f0"
+                "reference": "e32a61a52b58e035ad914203bde0f33c536eff56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/geo/zipball/569e6b4eb38cbf31f668bf9f00aafa61877d40f0",
-                "reference": "569e6b4eb38cbf31f668bf9f00aafa61877d40f0",
+                "url": "https://api.github.com/repos/yawik/geo/zipball/e32a61a52b58e035ad914203bde0f33c536eff56",
+                "reference": "e32a61a52b58e035ad914203bde0f33c536eff56",
                 "shasum": ""
             },
             "require": {
                 "jmikola/geojson": "^1.0.0",
-                "yawik/core": ">=0.33@dev"
+                "yawik/core": ">=0.33"
             },
             "type": "yawik-module",
             "extra": {
@@ -6410,38 +6410,38 @@
             ],
             "authors": [
                 {
-                    "name": "Anthonius Munthi",
-                    "email": "me@itstoni.com"
-                },
-                {
                     "name": "Mathias Gelhausen",
                     "email": "gelhausen@cross-solution.de"
                 },
                 {
                     "name": "Carsten Bleek",
                     "email": "bleek@cross-solution.de"
+                },
+                {
+                    "name": "Anthonius Munthi",
+                    "email": "me@itstoni.com"
                 }
             ],
             "description": "This package provide a Geo modules for yawik.",
             "keywords": [
+                "laminas",
                 "module",
-                "yawik",
-                "zf3"
+                "yawik"
             ],
-            "time": "2019-05-06T09:57:07+00:00"
+            "time": "2020-06-10T17:07:38+00:00"
         },
         {
             "name": "yawik/jobs",
-            "version": "v0.34.3",
+            "version": "v0.34.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/jobs.git",
-                "reference": "1bde4ce398f68eefc41c7901252faed65d019d31"
+                "reference": "3c1535bb287d971bd75dddd2c7c73e61c34c7b9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/jobs/zipball/1bde4ce398f68eefc41c7901252faed65d019d31",
-                "reference": "1bde4ce398f68eefc41c7901252faed65d019d31",
+                "url": "https://api.github.com/repos/yawik/jobs/zipball/3c1535bb287d971bd75dddd2c7c73e61c34c7b9a",
+                "reference": "3c1535bb287d971bd75dddd2c7c73e61c34c7b9a",
                 "shasum": ""
             },
             "require": {
@@ -6485,20 +6485,20 @@
                 "yawik",
                 "zf3"
             ],
-            "time": "2020-06-04T16:32:59+00:00"
+            "time": "2020-06-12T14:33:19+00:00"
         },
         {
             "name": "yawik/organizations",
-            "version": "v0.34.3",
+            "version": "v0.34.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/organizations.git",
-                "reference": "34a5f4e135d45ee73f7f76d0524f6143f1ca8084"
+                "reference": "4c6948047a61d9ec0ae47ea96664f8a8ccba4bfc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/organizations/zipball/34a5f4e135d45ee73f7f76d0524f6143f1ca8084",
-                "reference": "34a5f4e135d45ee73f7f76d0524f6143f1ca8084",
+                "url": "https://api.github.com/repos/yawik/organizations/zipball/4c6948047a61d9ec0ae47ea96664f8a8ccba4bfc",
+                "reference": "4c6948047a61d9ec0ae47ea96664f8a8ccba4bfc",
                 "shasum": ""
             },
             "require": {
@@ -6542,7 +6542,7 @@
                 "yawik",
                 "zf3"
             ],
-            "time": "2020-06-04T12:37:09+00:00"
+            "time": "2020-06-12T12:10:33+00:00"
         },
         {
             "name": "yawik/pdf",
@@ -6604,16 +6604,16 @@
         },
         {
             "name": "yawik/settings",
-            "version": "v0.34.3",
+            "version": "v0.34.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/settings.git",
-                "reference": "0c5a287b25b5b04030b5c71b4522ff4c6e5ab294"
+                "reference": "5d5419f55e7c39b04a6caaaf60218f28cab48549"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/settings/zipball/0c5a287b25b5b04030b5c71b4522ff4c6e5ab294",
-                "reference": "0c5a287b25b5b04030b5c71b4522ff4c6e5ab294",
+                "url": "https://api.github.com/repos/yawik/settings/zipball/5d5419f55e7c39b04a6caaaf60218f28cab48549",
+                "reference": "5d5419f55e7c39b04a6caaaf60218f28cab48549",
                 "shasum": ""
             },
             "require": {
@@ -6657,7 +6657,7 @@
                 "yawik",
                 "zf3"
             ],
-            "time": "2020-06-04T11:34:30+00:00"
+            "time": "2020-06-12T12:10:33+00:00"
         }
     ],
     "packages-dev": [
@@ -8450,7 +8450,7 @@
         },
         {
             "name": "symfony/browser-kit",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
@@ -8523,7 +8523,7 @@
         },
         {
             "name": "symfony/config",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
@@ -8601,7 +8601,7 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v5.1.0",
+            "version": "v5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -8668,16 +8668,16 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "6a2cecd7011aec38b5fb2270abf0de120e7679b1"
+                "reference": "a37cc0a90fec178768aa5048fea9251efde591c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/6a2cecd7011aec38b5fb2270abf0de120e7679b1",
-                "reference": "6a2cecd7011aec38b5fb2270abf0de120e7679b1",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/a37cc0a90fec178768aa5048fea9251efde591c5",
+                "reference": "a37cc0a90fec178768aa5048fea9251efde591c5",
                 "shasum": ""
             },
             "require": {
@@ -8751,11 +8751,11 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-30T20:06:45+00:00"
+            "time": "2020-06-12T07:37:04+00:00"
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
@@ -8830,7 +8830,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -8972,7 +8972,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -9133,7 +9133,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
