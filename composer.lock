@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df3c26c3b482ce2aa86a033311746fad",
+    "content-hash": "8279b153897b262a874f4e13a3f64c7c",
     "packages": [
         {
             "name": "alcaeus/mongo-php-adapter",
@@ -6592,25 +6592,26 @@
         },
         {
             "name": "yawik/composer-plugin",
-            "version": "v1.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/composer-plugin.git",
-                "reference": "d3a45d2ab342fc0eb21e1126e8637fb7752464e4"
+                "reference": "69d2bf26590ed9502fbf8e986793f8ee500c485e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/composer-plugin/zipball/d3a45d2ab342fc0eb21e1126e8637fb7752464e4",
-                "reference": "d3a45d2ab342fc0eb21e1126e8637fb7752464e4",
+                "url": "https://api.github.com/repos/yawik/composer-plugin/zipball/69d2bf26590ed9502fbf8e986793f8ee500c485e",
+                "reference": "69d2bf26590ed9502fbf8e986793f8ee500c485e",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.1",
+                "laminas/laminas-dependency-plugin": "^1.0",
+                "laminas/laminas-eventmanager": "^3.2",
                 "php": ">=5.6",
                 "psr/log": "^1.0",
-                "symfony/console": "^3.4 | ^4.1",
-                "symfony/finder": "^3.4 | ^4.1",
-                "zendframework/zend-eventmanager": "^3.2"
+                "symfony/console": "^3.4 | ^4.1 | ^5.0",
+                "symfony/finder": "^3.4 | ^4.1"
             },
             "replace": {
                 "yawik/composer-plugin": "self.version"
@@ -6654,7 +6655,7 @@
                 }
             ],
             "description": "The composer plugin for yawik application",
-            "time": "2018-11-24T04:11:48+00:00"
+            "time": "2020-05-08T10:33:02+00:00"
         },
         {
             "name": "yawik/core",
