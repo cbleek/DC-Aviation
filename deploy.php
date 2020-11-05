@@ -7,7 +7,7 @@ require 'recipe/zend_framework.php';
 set('application', 'YAWIK');
 
 // Project repository
-set('repository', 'https://github.com/cbleek/Aviation.git');
+set('repository', 'git@gitlab.cross-solution.de:aviation/yawik.git');
 
 // Shared files/dirs between deploys
 add('shared_files', [
