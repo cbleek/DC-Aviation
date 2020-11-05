@@ -10,7 +10,7 @@
         }
     ],
     "support": {
-        "source": "git@gitlab.cross-solution.de:aviation/yawik.git"
+        "source": "https://github.com/DCAviation/Aviation"
     },
     "keywords": [
         "yawik",
