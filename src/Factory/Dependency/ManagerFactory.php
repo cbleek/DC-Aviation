@@ -6,8 +6,9 @@
 /**  */
 namespace Aviation\Factory\Dependency;
 
-use Laminas\ServiceManager\FactoryInterface;
-use Laminas\ServiceManager\ServiceLocatorInterface;
+use Aviation\Dependency\Manager;
+use Interop\Container\ContainerInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 /**
  *
@@ -16,11 +17,15 @@ use Laminas\ServiceManager\ServiceLocatorInterface;
  */
 class ManagerFactory implements FactoryInterface
 {
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, ?array $options = null)
     {
-        $manager = new \Aviation\Dependency\Manager($serviceLocator->get('Core/DocumentManager'));
-        $manager->setEventManager($serviceLocator->get('Auth/Dependency/Manager/Events'));
-        
+        $manager = new Manager(
+            $container->get('Core/DocumentManager')
+        );
+        $manager->setEventManager(
+            $container->get('Auth/Dependency/Manager/Events')
+        );
+
         return $manager;
     }
 }
