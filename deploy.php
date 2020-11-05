@@ -40,6 +40,14 @@ host('aviation.yawik.org')
     ->set('deploy_path', '/home/yawik/production')
     ->set('writableusesudo', true);
 
+host('staging.aviation.yawik.org')
+    ->user('yawik')
+    ->stage('staging')
+    ->multiplexing(false)
+    ->set('deploy_path', '/home/yawik/staging')
+    ->set('writableusesudo', true);
+
+
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
 
