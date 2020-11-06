@@ -10,7 +10,7 @@
         }
     ],
     "support": {
-        "source": "https://github.com/cbleek/Aviation"
+        "source": "https://github.com/DCAviation/Aviation"
     },
     "keywords": [
         "yawik",
@@ -28,7 +28,7 @@
         "yawik/cv": "^0.34",
         "yawik/organizations": "^0.34",
         "yawik/pdf": "^0.34",
-        "yawik/composer-plugin": "^2.0",
+        "yawik/composer-plugin": "^3.0",
         "laminas/laminas-dependency-plugin": "*"
     },
     "require-dev": {
