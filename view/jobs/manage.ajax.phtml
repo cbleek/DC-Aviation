@@ -17,7 +17,6 @@ $snapshots = $this->services('repositories.Jobs/JobSnapshot');
     <th><?php echo $this->translate('Title of the job')?></th>
     <th><?php echo $this->translate('Location')?></th>
     <th><?php echo $this->translate('Companyname')?></th>
-    <th><?php echo $this->translate('Reference')?></th>
     <?php if ($isRecruiter):?>
        <th><?php echo $this->translate('Applications')?></th>
        <th><?php echo $this->translate('Status')?></th>
@@ -67,7 +66,6 @@ $isSnapshot = $job->hasSnapshotDraft();
     </td>
     <td><?php echo $this->formatLocation($job->getLocations(), null, ' | ')?></td>
     <td><?php echo $job->getCompany()?></td>
-    <td><?php echo empty($job->getReference())? $job->getApplyId():$job->getReference() ?></td>
 
       <?php if ($isRecruiter):?>
           <td>
