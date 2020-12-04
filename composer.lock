@@ -7952,16 +7952,16 @@
         },
         {
             "name": "yawik/applications",
-            "version": "v0.35.0",
+            "version": "v0.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/applications.git",
-                "reference": "ac7abd39ba61337e5edb38be0a4006f411cc8b56"
+                "reference": "c39fb13ac8d4d2bcd14680bef915249c95c87d5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/applications/zipball/ac7abd39ba61337e5edb38be0a4006f411cc8b56",
-                "reference": "ac7abd39ba61337e5edb38be0a4006f411cc8b56",
+                "url": "https://api.github.com/repos/yawik/applications/zipball/c39fb13ac8d4d2bcd14680bef915249c95c87d5f",
+                "reference": "c39fb13ac8d4d2bcd14680bef915249c95c87d5f",
                 "shasum": ""
             },
             "require": {
@@ -8009,13 +8009,13 @@
                 "yawik"
             ],
             "support": {
-                "source": "https://github.com/yawik/applications/tree/v0.35.0"
+                "source": "https://github.com/yawik/applications/tree/v0.35.1"
             },
-            "time": "2020-07-24T13:38:45+00:00"
+            "time": "2020-12-04T16:57:22+00:00"
         },
         {
             "name": "yawik/auth",
-            "version": "v0.35.0",
+            "version": "v0.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/auth.git",
@@ -8072,7 +8072,7 @@
                 "yawik"
             ],
             "support": {
-                "source": "https://github.com/yawik/auth/tree/v0.35.0"
+                "source": "https://github.com/yawik/auth/tree/v0.35.1"
             },
             "time": "2020-11-11T11:51:24+00:00"
         },
@@ -8149,16 +8149,16 @@
         },
         {
             "name": "yawik/core",
-            "version": "v0.35.0",
+            "version": "v0.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/core.git",
-                "reference": "eb6613c7092077f796fee2e79cc283dee3d1fbf2"
+                "reference": "be3c1b63d6ac6a19dd6260f934874fbbb4ac00d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/core/zipball/eb6613c7092077f796fee2e79cc283dee3d1fbf2",
-                "reference": "eb6613c7092077f796fee2e79cc283dee3d1fbf2",
+                "url": "https://api.github.com/repos/yawik/core/zipball/be3c1b63d6ac6a19dd6260f934874fbbb4ac00d3",
+                "reference": "be3c1b63d6ac6a19dd6260f934874fbbb4ac00d3",
                 "shasum": ""
             },
             "require": {
@@ -8257,7 +8257,7 @@
                 "yawik"
             ],
             "support": {
-                "source": "https://github.com/yawik/core/tree/v0.35.0"
+                "source": "https://github.com/yawik/core/tree/v0.35.1"
             },
             "funding": [
                 {
@@ -8265,11 +8265,11 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-11T12:34:17+00:00"
+            "time": "2020-12-04T17:03:38+00:00"
         },
         {
             "name": "yawik/cv",
-            "version": "v0.35.0",
+            "version": "v0.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/cv.git",
@@ -8326,7 +8326,7 @@
                 "yawik"
             ],
             "support": {
-                "source": "https://github.com/yawik/cv/tree/v0.35.0"
+                "source": "https://github.com/yawik/cv/tree/v0.35.1"
             },
             "time": "2020-06-24T08:06:04+00:00"
         },
@@ -8394,16 +8394,16 @@
         },
         {
             "name": "yawik/jobs",
-            "version": "v0.35.0",
+            "version": "v0.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/jobs.git",
-                "reference": "5de4d932cbabba64efec2475a1bc2c9f644e3a87"
+                "reference": "87c5fcf29220694e8b53a9e3394104a32e6d4226"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/jobs/zipball/5de4d932cbabba64efec2475a1bc2c9f644e3a87",
-                "reference": "5de4d932cbabba64efec2475a1bc2c9f644e3a87",
+                "url": "https://api.github.com/repos/yawik/jobs/zipball/87c5fcf29220694e8b53a9e3394104a32e6d4226",
+                "reference": "87c5fcf29220694e8b53a9e3394104a32e6d4226",
                 "shasum": ""
             },
             "require": {
@@ -8450,13 +8450,13 @@
             ],
             "support": {
                 "issues": "https://github.com/yawik/jobs/issues",
-                "source": "https://github.com/yawik/jobs/tree/v0.35.0"
+                "source": "https://github.com/yawik/jobs/tree/v0.35.1"
             },
-            "time": "2020-08-25T13:43:19+00:00"
+            "time": "2020-11-18T14:17:27+00:00"
         },
         {
             "name": "yawik/organizations",
-            "version": "v0.35.0",
+            "version": "v0.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/organizations.git",
@@ -8512,13 +8512,13 @@
             ],
             "support": {
                 "issues": "https://github.com/yawik/organizations/issues",
-                "source": "https://github.com/yawik/organizations/tree/v0.35.0"
+                "source": "https://github.com/yawik/organizations/tree/v0.35.1"
             },
             "time": "2020-07-20T10:38:19+00:00"
         },
         {
             "name": "yawik/pdf",
-            "version": "v0.35.0",
+            "version": "v0.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/pdf.git",
@@ -8581,7 +8581,7 @@
         },
         {
             "name": "yawik/settings",
-            "version": "v0.35.0",
+            "version": "v0.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/settings.git",
@@ -8637,7 +8637,7 @@
             ],
             "support": {
                 "issues": "https://github.com/yawik/settings/issues",
-                "source": "https://github.com/yawik/settings/tree/v0.35.0"
+                "source": "https://github.com/yawik/settings/tree/v0.35.1"
             },
             "time": "2020-06-24T08:06:04+00:00"
         }
