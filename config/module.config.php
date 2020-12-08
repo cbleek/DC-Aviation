@@ -43,6 +43,7 @@ return array(
         'template_map' => [
             'layout/layout' => __DIR__ . '/../view/layout.phtml',
             'layout/application-form' => __DIR__ . '/../view/application-form.phtml',
+            'aviation/footer' => __DIR__ . '/../view/footer.phtml',
             'core/index/index' => __DIR__ . '/../view/index.phtml',
             'piwik' => __DIR__ . '/../view/piwik.phtml',
             'jobs/jobboard/index.ajax.phtml' => __DIR__ . '/../view/jobs/index.ajax.phtml',

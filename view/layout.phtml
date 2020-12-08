@@ -120,26 +120,7 @@ foreach ($languages as $lang) {
     <?php echo $this->content; ?>
 </main>
 <!-- /container -->
-<footer id="yk-footer">
- <div class="container">
-    <div class="row">
-       <div class="col-md-4">
-           <?=$this->languageSwitcher()?>
-       </div>
-	        <div class="col-md-4">
-            </div>
-           <div class="col-md-4" align="right">
-                <span class="pull-right"><small>
-                        &copy; <?php echo date("Y")?> <a href="https://www.dc-aviation.com">
-                            Aviation</a>.
-                        | <a href="<?php echo  $this->basePath($this->params('lang').'/content/imprint')?>"><?php echo $this->translate('Imprint') ?></a>
-                        | <?php echo $this->moduleVersion('Aviation')->full() ?><br/>
-                        Powered by <a href="http://yawik.org">YAWIK</a> <?=$this->moduleVersion('Core') ?>
-                 </small></span>
-           </div>
-    </div>
-  </div>
-</footer>
+<?=$this->partial('aviation/footer')?>
 <?php echo $this->partial("piwik") ?>
 </body>
 </html>
