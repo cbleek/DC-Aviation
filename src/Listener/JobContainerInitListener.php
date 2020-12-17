@@ -13,5 +13,6 @@ class JobContainerInitListener
         $jobContainer = $event->getForm();
         $jobContainer->disableForm('general.portalForm');
         $jobContainer->disableForm('general.customerNote');
+        $jobContainer->disableForm('general.salaryForm');
     }
 }
