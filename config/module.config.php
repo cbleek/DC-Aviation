@@ -51,6 +51,7 @@ return array(
             'templates/default/index' => __DIR__ . '/../view/jobs/templates/index.phtml',
             'iframe/iFrame.phtml' => __DIR__ . '/../view/jobs/iFrame.phtml',
             'jobs/form/preview' => __DIR__ . '/../view/jobs/preview.phtml',
+            'applications/apply/_buttons' => __DIR__ . '/../view/applications/_buttons.phtml',
         ],
     ],
     'view_helpers' => [
@@ -73,6 +74,12 @@ return array(
     'form_elements' => [
         'invokables' => [
             'Jobs/Description' => 'Aviation\Form\JobsDescription',
+        ],
+    ],
+
+    'validators' => [
+        'invokables' => [
+            'Applications/Application' => Validator\ApplicationValidator::class,
         ],
     ],
 
