@@ -1,0 +1,11 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Aviation;
+
+return [
+    'application_options' => [
+        'delayApplicantRejectMail' => 86400 /* 24 h */
+    ],
+];
