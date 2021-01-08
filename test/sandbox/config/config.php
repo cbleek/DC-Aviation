@@ -4,6 +4,7 @@ chdir(dirname(__DIR__));
 return [
     'modules' => [
         'Core',
+        'SlmQueue',
         'Auth',
         'Jobs',
         'Settings',
