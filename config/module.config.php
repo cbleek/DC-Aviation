@@ -37,6 +37,12 @@ return array(
         'factories' => [
             'Auth/Dependency/Manager' => 'Aviation\Factory\Dependency\ManagerFactory',
             Listener\AutoJobActivation::class => Listener\AutoJobActivationFactory::class,
+            Entity\ApplicationStatusMailTemplates::class => Entity\ApplicationStatusMailTemplatesFactory::class,
+        ],
+        'delegators' => [
+            'Applications/Listener/ApplicationStatusChangePre' => [
+                Listener\ApplicationStatusChangeDelegatorFactory::class,
+            ],
         ],
     ],
     'view_manager' => [
