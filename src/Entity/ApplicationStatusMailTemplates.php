@@ -42,6 +42,7 @@ class ApplicationStatusMailTemplates
 
                 We wish you all the best and good luck for your future career! 
                 TMPL,
+            'en_subject' => 'Your application dated %s',
         ],
         StatusInterface::INVITED => [
             'de' => <<<TMPL
@@ -58,6 +59,7 @@ class ApplicationStatusMailTemplates
 
                 As the next step, we would thus like to get to know you personally.To that end, we cordially invite you to a first job interview:
                 TMPL,
+            'en_subject' => 'Your application dated %s',
         ],
     ];
 
@@ -68,12 +70,21 @@ class ApplicationStatusMailTemplates
         $this->languagesForOrganizations = $languageMap;
     }
 
-    public function get(string $status, string $language = 'de'): string
+    /**
+     * @return string[] first item is the mail text, second the mail subject
+     */
+    public function get(string $status, string $language = 'de'): array
     {
-        return $this->templates[$status][$language] ?? '';
+        return [
+            $this->templates[$status][$language] ?? '',
+            $this->templates[$status][$language . "_subject"] ?? 'Ihre Bewerbung vom %s',
+        ];
     }
 
-    public function getForOrganization(string $status, OrganizationInterface $organization): string
+    /**
+     * @return string[] first item is the mail text, second the mail subject
+     */
+    public function getForOrganization(string $status, OrganizationInterface $organization): array
     {
         $language = $this->languagesForOrganizations[$organization->getId()] ?? 'de';
 

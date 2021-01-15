@@ -27,7 +27,8 @@ class ApplicationStatusChangeDelegatorFactory implements DelegatorFactoryInterfa
     {
         return new ApplicationStatusChangeDelegator(
             $callback(),
-            $container->get(ApplicationStatusMailTemplates::class)
+            $container->get(ApplicationStatusMailTemplates::class),
+            $container->get('Core/MailService')
         );
     }
 }
