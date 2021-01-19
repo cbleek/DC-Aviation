@@ -23,6 +23,24 @@ use Organizations\Entity\OrganizationInterface;
 class ApplicationStatusMailTemplates
 {
     private $templates = [
+        StatusInterface::CONFIRMED => [
+            'de' => <<<TMPL
+                vielen Dank für Ihre Bewerbung, über die wir uns sehr gefreut haben.
+
+                Wir werden uns nach Durchsicht Ihrer Bewerbungsunterlagen wieder mit Ihnen in Verbindung setzen.
+
+                Bis dahin bitten wir Sie um etwas Geduld.
+                TMPL,
+
+            'en' => <<<TMPL
+                Thank you very much for your application which we were delighted to receive.
+
+                We will get in touch with you again after reviewing your application documents.
+
+                Until then, we kindly ask you for a little patience. 
+                TMPL,
+            'en_subject' => 'Your application dated %s',
+        ],
         StatusInterface::REJECTED => [
             'de' => <<<TMPL
                 wir möchten uns noch einmal recht herzlich für Ihre Bewerbung und das damit verbundene Interesse an unserem Unternehmen bedanken.
