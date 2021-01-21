@@ -60,6 +60,10 @@ return array(
             'iframe/iFrame.phtml' => __DIR__ . '/../view/jobs/iFrame.phtml',
             'jobs/form/preview' => __DIR__ . '/../view/jobs/preview.phtml',
             'applications/apply/_buttons' => __DIR__ . '/../view/applications/_buttons.phtml',
+            'mail/header' => __DIR__ . '/../view/mail/header.phtml',
+            'mail/footer' => __DIR__ . '/../view/mail/footer.phtml',
+            'mail/footer.en' => __DIR__ . '/../view/mail/footer.en.phtml',
+            'mail/forgotPassword' =>  __DIR__ . '/../view/mail/forgot-password.phtml',
         ],
     ],
     'view_helpers' => [
