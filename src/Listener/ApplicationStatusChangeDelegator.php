@@ -13,6 +13,7 @@ namespace Aviation\Listener;
 
 use Applications\Listener\Events\ApplicationEvent;
 use Applications\Listener\StatusChange;
+use Applications\Options\ModuleOptions;
 use Aviation\Entity\ApplicationStatusMailTemplates;
 use Core\Mail\MailService;
 
@@ -77,5 +78,4 @@ class ApplicationStatusChangeDelegator
     {
         $this->listener->sendMail($event);
     }
-
 }

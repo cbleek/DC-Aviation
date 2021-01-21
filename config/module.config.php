@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Aviation;
 
 use Aviation\Listener\AutoAcceptTermsOfServiceListener;
+use Aviation\Queue\ApplicationConfirmMailJob;
 use Jobs\Listener\Events\JobEvent;
 use Laminas\ServiceManager\Factory\InvokableFactory;
 
@@ -38,6 +39,7 @@ return array(
             'Auth/Dependency/Manager' => 'Aviation\Factory\Dependency\ManagerFactory',
             Listener\AutoJobActivation::class => Listener\AutoJobActivationFactory::class,
             Entity\ApplicationStatusMailTemplates::class => Entity\ApplicationStatusMailTemplatesFactory::class,
+            Listener\ApplicationCreated::class => Listener\ApplicationCreatedFactory::class,
         ],
         'delegators' => [
             'Applications/Listener/ApplicationStatusChangePre' => [
@@ -101,6 +103,14 @@ return array(
                     JobEvent::EVENT_STATUS_CHANGED => 'activateChangedJob'
                 ],
                 'lazy' => true,
+            ],
+        ]],
+
+
+        'Applications/Events' => [ 'listeners' => [
+            Listener\ApplicationCreated::class => [
+                \Applications\Listener\Events\ApplicationEvent::EVENT_APPLICATION_POST_CREATE,
+                true
             ],
         ]],
     ],
