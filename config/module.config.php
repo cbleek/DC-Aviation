@@ -64,6 +64,7 @@ return array(
             'mail/footer' => __DIR__ . '/../view/mail/footer.phtml',
             'mail/footer.en' => __DIR__ . '/../view/mail/footer.en.phtml',
             'mail/forgotPassword' =>  __DIR__ . '/../view/mail/forgot-password.phtml',
+            'organizations/mail/invite-employee' => __DIR__ . '/../view/mail/invite-employee.phtml',
         ],
     ],
     'view_helpers' => [
