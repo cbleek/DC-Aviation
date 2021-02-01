@@ -111,6 +111,9 @@ return array(
             ],
         ]],
 
+        'Jobs/JobContainer/Events' => [ 'listeners' => [
+            Listener\RequireDepartmentManagers::class => [ 'ValidateJob', true ],
+        ]],
 
         'Applications/Events' => [ 'listeners' => [
             Listener\ApplicationCreated::class => [
