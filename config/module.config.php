@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Aviation;
 
 use Aviation\Listener\AutoAcceptTermsOfServiceListener;
-use Aviation\Queue\ApplicationConfirmMailJob;
 use Jobs\Listener\Events\JobEvent;
 use Laminas\ServiceManager\Factory\InvokableFactory;
 
@@ -47,6 +46,14 @@ return array(
             ],
         ],
     ],
+
+    'mails' => [
+        'factories' => [
+            Mail\ApplicationConfirmation::class => Mail\StringTemplateHtmlMailFactory::class,
+            'Applications/NewApplication' => Mail\NewApplicationFactory::class,
+        ],
+    ],
+
     'view_manager' => [
         'template_map' => [
             'layout/layout' => __DIR__ . '/../view/layout.phtml',
@@ -64,6 +71,7 @@ return array(
             'mail/footer' => __DIR__ . '/../view/mail/footer.phtml',
             'mail/footer.en' => __DIR__ . '/../view/mail/footer.en.phtml',
             'mail/forgotPassword' =>  __DIR__ . '/../view/mail/forgot-password.phtml',
+            'aviation.mail.HTMLContentMail' => __DIR__ . '/../view/mail/aviation.mail.HTMLContentMail.phtml',
             'organizations/mail/invite-employee' => __DIR__ . '/../view/mail/invite-employee.phtml',
         ],
     ],

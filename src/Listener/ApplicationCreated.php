@@ -13,11 +13,11 @@ namespace Aviation\Listener;
 
 use Applications\Entity\StatusInterface;
 use Applications\Listener\Events\ApplicationEvent;
-use Applications\Mail\Confirmation;
 use Applications\Repository\Application;
 use Aviation\Entity\ApplicationStatusMailTemplates;
+use Aviation\Mail\ApplicationConfirmation;
 use Core\Mail\MailService;
-use Core\Queue\Job\MailJob;
+
 
 /**
  * TODO: description
@@ -47,7 +47,7 @@ class ApplicationCreated
         [$body, $subject] = $this->templates->getForOrganization(StatusInterface::CONFIRMED, $organization);
 
         $mail = $this->mails->build(
-            Confirmation::class,
+            ApplicationConfirmation::class,
             [
                 'application' => $application,
                 'body' => $body,
