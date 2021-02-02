@@ -31,7 +31,9 @@ trait StringTemplateHtmlMailTrait
     {
         parent::__construct($options);
         $this->renderer = $renderer;
-        $this->getHeaders()->addHeader(ContentType::fromString('Content-Type: text/html; charset=UTF-8'));
+        $headers = $this->getHeaders();
+        $headers->removeHeader('Content-Type');
+        $headers->addHeader(ContentType::fromString('Content-Type: text/html; charset=UTF-8'));
         $this->setEncoding('UTF-8');
     }
 
