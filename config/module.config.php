@@ -51,6 +51,8 @@ return array(
         'factories' => [
             Mail\ApplicationConfirmation::class => Mail\StringTemplateHtmlMailFactory::class,
             'Applications/NewApplication' => Mail\NewApplicationFactory::class,
+            'Applications\Mail\StatusChange' => [Mail\ApplicationsFixedStatusChange::class, 'factory'],
+            Mail\ApplicationStatusChange::class => Mail\StringTemplateHtmlMailFactory::class,
         ],
     ],
 

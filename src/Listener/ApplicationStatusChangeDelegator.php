@@ -15,6 +15,7 @@ use Applications\Listener\Events\ApplicationEvent;
 use Applications\Listener\StatusChange;
 use Applications\Options\ModuleOptions;
 use Aviation\Entity\ApplicationStatusMailTemplates;
+use Aviation\Mail\ApplicationStatusChange;
 use Core\Mail\MailService;
 
 /**
@@ -69,13 +70,69 @@ class ApplicationStatusChangeDelegator
         $target->setFormData($data);
     }
 
-    /**
-        * Sends the Notification Mail.
-        *
-        * @param ApplicationEvent $event
-        */
+     /**
+     * Sends the Notification Mail.
+     *
+     * @param ApplicationEvent $event
+     */
     public function sendMail(ApplicationEvent $event)
     {
-        $this->listener->sendMail($event);
+        $event = $event->getTarget();
+        if (!$event->isPostRequest()) {
+            return;
+        }
+
+        $this->application = $event->getApplicationEntity();
+        $status = $event->getStatus();
+        $user = $event->getUser();
+        $post = $event->getPostData();
+
+        $settings = $user->getSettings('Applications');
+        $recipient = $this->getRecipient($this->application, $status);
+        /* @var \Applications\Mail\StatusChange $mail */
+        $mail = $this->mailService->get(ApplicationStatusChange::class);
+
+        $mail->setSubject($post['mailSubject']);
+        $mail->setBody($post['mailText']);
+        $mail->setTo($recipient);
+
+        if ($from = $this->application->getJob()->getContactEmail()) {
+            $mail->setFrom($from, $this->application->getJob()->getCompany());
+        }
+
+        if ($settings->mailBCC) {
+            $mail->addBcc($user->getInfo()->getEmail(), $user->getInfo()->getDisplayName());
+        }
+        $job = $this->application->getJob();
+        $jobUser = $job->getUser();
+        if ($jobUser->getId() != $user->getId()) {
+            $jobUserSettings = $jobUser->getSettings('Applications');
+            if ($jobUserSettings->getMailBCC()) {
+                $mail->addBcc($jobUser->getInfo()->getEmail(), $jobUser->getInfo()->getDisplayName(false));
+            }
+        }
+
+        $org = $job->getOrganization()->getParent(/*returnSelf*/ true);
+        $orgUser = $org->getUser();
+        if ($orgUser->getId() != $user->getId() && $orgUser->getId() != $jobUser->getId()) {
+            $orgUserSettings = $orgUser->getSettings('Applications');
+            if ($orgUserSettings->getMailBCC()) {
+                $mail->addBcc($orgUser->getInfo()->getEmail(), $orgUser->getInfo()->getDisplayName(false));
+            }
+        }
+
+        if ($this->options->getDelayApplicantRejectMail()
+            && $status == Status::REJECTED
+        ) {
+            $this->mailService->queue($mail, [ 'delay' => $this->options->getDelayApplicantRejectMail() ]);
+        } else {
+            $this->mailService->send($mail);
+        }
+
+
+        $historyText = sprintf($this->translator->translate('Mail was sent to %s'), key($recipient) ?: $recipient[0]);
+        $this->application->changeStatus($status, $historyText);
+        $event->setNotification($historyText);
     }
+
 }

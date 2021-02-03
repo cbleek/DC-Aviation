@@ -34,7 +34,7 @@ class StringTemplateHtmlMailFactory
 
         return new $mailClass(
             $container->get('ViewManager'),
-            $options
+            $options ?? []
         );
     }
 }

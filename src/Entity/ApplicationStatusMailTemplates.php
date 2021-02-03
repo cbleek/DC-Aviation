@@ -25,6 +25,8 @@ class ApplicationStatusMailTemplates
     private $templates = [
         StatusInterface::CONFIRMED => [
             'de' => <<<TMPL
+                ##anrede_formell##,
+
                 vielen Dank für Ihre Bewerbung, über die wir uns sehr gefreut haben.
 
                 Wir werden uns nach Durchsicht Ihrer Bewerbungsunterlagen wieder mit Ihnen in Verbindung setzen.
@@ -33,6 +35,8 @@ class ApplicationStatusMailTemplates
                 TMPL,
 
             'en' => <<<TMPL
+                ##salutation_formal##,
+
                 Thank you very much for your application which we were delighted to receive.
 
                 We will get in touch with you again after reviewing your application documents.
@@ -43,6 +47,8 @@ class ApplicationStatusMailTemplates
         ],
         StatusInterface::REJECTED => [
             'de' => <<<TMPL
+                ##anrede_formell##,
+
                 wir möchten uns noch einmal recht herzlich für Ihre Bewerbung und das damit verbundene Interesse an unserem Unternehmen bedanken.
 
                 Aufgrund der zahlreichen qualifizierten Bewerbungen ist uns die Vorauswahl nicht leicht gefallen.
@@ -52,6 +58,8 @@ class ApplicationStatusMailTemplates
                 Für Ihre weitere berufliche Zukunft wünschen wir Ihnen alles Gute und viel Erfolg!
                 TMPL,
             'en' => <<<TMPL
+                ##salutation_formal##,
+
                 We would once again like to thank you sincerely for your application and for the associated interest in our company.
 
                 Due to the high number of qualified applications, taking a screening decision has not been easy for us.
@@ -64,6 +72,8 @@ class ApplicationStatusMailTemplates
         ],
         StatusInterface::INVITED => [
             'de' => <<<TMPL
+                ##anrede_formell##,
+
                 Die Vorauswahl für die ausgeschriebene Stelle/Funktion ist nun abgeschlossen.
 
                 Im nächsten Schritt möchten wir Sie daher gerne persönlich kennen lernen.
@@ -71,6 +81,8 @@ class ApplicationStatusMailTemplates
                 Zu diesem Zweck laden wir Sie recht herzlich zu einem ersten Vorstellungsgespräch ein:
                 TMPL,
             'en' => <<<TMPL
+                ##salutation_formal##,
+
                 The screening for the advertised position/function is now complete.
 
                 We are pleased to inform you that your personal and professional profile has piqued our interest.
