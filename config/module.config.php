@@ -26,6 +26,21 @@ return array(
         ],
     ],
 
+    'acl' => [
+        'roles' => [
+            'department_manager' => 'recruiter',
+        ],
+        'rules' => [
+            'department_manager' => [
+                'deny' => [
+                    'route/lang/cvs',
+                    'navigation/resume-recruiter',
+                    'route/lang/organizations',
+                ]
+            ],
+        ],
+    ],
+
     'navigation' => [
         'default' => [
             'dashboard' => [

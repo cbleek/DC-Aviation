@@ -54,6 +54,20 @@ foreach ($languages as $lang) {
     <?php echo $this->configHeadScript() ?>
     <?php echo $this->headLink() ?>
     <?php echo $this->headStyle() ?>
+    <?php if ($this->auth('role') == 'department_manager'):?>
+        <style type="text/css">
+        #sidebar a[href$="Applications"],
+        #jobs-list-filter #params-by-group,
+        #sidebar a[href$="jobs/edit"]<?php
+            if ($this->services('Application')->getMvcEvent()->getRouteMatch()->getMatchedRouteName() == 'lang/applications/detail'):
+        ?>,
+        #content nav
+        <?php endif ?>
+        {
+            display:none;
+        }
+        </style>
+    <?php endif ?>
     <link rel="icon" href="<?=$this->basePath('modules/Aviation/img/favicon.ico')?>" sizes="32x32" />
     <link rel="icon" href="<?=$this->basePath('modules/Aviation/img/cropped-yawik-small-192x192.jpg')?>" sizes="192x192" />
     <link rel="apple-touch-icon-precomposed" href="<?=$this->basePath('modules/Aviation/img/cropped-yawik-small-180x180.jpg')?>" />
