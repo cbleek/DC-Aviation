@@ -115,6 +115,16 @@ return array(
         ],
     ],
 
+    'form_elements_config' => [
+        'Applications/Apply' => [
+            /*
+             * you can hide form fieldsets, which implements the DisableElementsCapableInterface
+             * These are: profiles, facts
+             */
+            'disable_elements' => ['facts', 'profiles'],
+        ],
+    ],
+
     'validators' => [
         'invokables' => [
             'Applications/Application' => Validator\ApplicationValidator::class,
