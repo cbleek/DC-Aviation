@@ -23,6 +23,19 @@ class ApplicationConfirmation extends Confirmation
 {
     use StringTemplateHtmlMailTrait;
 
+    protected function initCallbacks()
+    {
+        $this->callbacks = [
+            'anrede_formell' => 'getFormalSalutation',
+            'salutation_formal' => 'getFormalSalutation',
+            'anrede_informell' => 'getInformalSalutation',
+            'salutation_informal' => 'getInformalSalutation',
+            'job_title' => 'getJobTitle',
+            'date' => 'getDate',
+            'link' => 'getApplicationLink',
+        ];
+    }
+
     protected function getApplicationLink()
     {
         return sprintf(
