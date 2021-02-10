@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace Aviation\Listener;
 
+use Applications\Entity\Application;
+use Applications\Entity\StatusInterface;
 use Applications\Listener\Events\ApplicationEvent;
 use Applications\Listener\StatusChange;
 use Applications\Options\ModuleOptions;
@@ -30,15 +32,18 @@ class ApplicationStatusChangeDelegator
     private $listener;
     private $templates;
     private $mails;
+    private $options;
 
     public function __construct(
         StatusChange $listener,
         ApplicationStatusMailTemplates $templates,
-        MailService $mails
+        MailService $mails,
+        ModuleOptions $options
     ) {
         $this->listener = $listener;
         $this->templates = $templates;
         $this->mails = $mails;
+        $this->options = $options;
     }
 
     public function prepareFormData(ApplicationEvent $e)
@@ -82,28 +87,28 @@ class ApplicationStatusChangeDelegator
             return;
         }
 
-        $this->application = $event->getApplicationEntity();
+        $application = $event->getApplicationEntity();
         $status = $event->getStatus();
         $user = $event->getUser();
         $post = $event->getPostData();
 
         $settings = $user->getSettings('Applications');
-        $recipient = $this->getRecipient($this->application, $status);
+        $recipient = $this->getRecipient($application, $status);
         /* @var \Applications\Mail\StatusChange $mail */
-        $mail = $this->mailService->get(ApplicationStatusChange::class);
+        $mail = $this->mails->get(ApplicationStatusChange::class);
 
         $mail->setSubject($post['mailSubject']);
         $mail->setBody($post['mailText']);
         $mail->setTo($recipient);
 
-        if ($from = $this->application->getJob()->getContactEmail()) {
-            $mail->setFrom($from, $this->application->getJob()->getCompany());
+        if ($from = $application->getJob()->getContactEmail()) {
+            $mail->setFrom($from, $application->getJob()->getCompany());
         }
 
         if ($settings->mailBCC) {
             $mail->addBcc($user->getInfo()->getEmail(), $user->getInfo()->getDisplayName());
         }
-        $job = $this->application->getJob();
+        $job = $application->getJob();
         $jobUser = $job->getUser();
         if ($jobUser->getId() != $user->getId()) {
             $jobUserSettings = $jobUser->getSettings('Applications');
@@ -122,17 +127,34 @@ class ApplicationStatusChangeDelegator
         }
 
         if ($this->options->getDelayApplicantRejectMail()
-            && $status == Status::REJECTED
+            && $status == StatusInterface::REJECTED
         ) {
-            $this->mailService->queue($mail, [ 'delay' => $this->options->getDelayApplicantRejectMail() ]);
+            $this->mails->queue($mail, [ 'delay' => $this->options->getDelayApplicantRejectMail() ]);
         } else {
-            $this->mailService->send($mail);
+            $this->mails->send($mail);
         }
 
 
-        $historyText = sprintf($this->translator->translate('Mail was sent to %s'), key($recipient) ?: $recipient[0]);
-        $this->application->changeStatus($status, $historyText);
+        $historyText = sprintf('E-Mail gesendet an %s', key($recipient) ?: $recipient[0]);
+        $application->changeStatus($status, $historyText);
         $event->setNotification($historyText);
     }
 
+     /**
+     * @param Application $application
+     * @param             $status
+     *
+     * @return array
+     */
+    protected function getRecipient(Application $application, $status)
+    {
+        $recipient = StatusInterface::ACCEPTED == $status
+            ? $application->getJob()->getUser()->getInfo()
+            : $application->getContact();
+
+        $email = $recipient->getEmail();
+        $name  = $recipient->getDisplayName(false);
+
+        return $name ? [ $email => $name ] : [ $email ];
+    }
 }
