@@ -90,6 +90,7 @@ return array(
             'mail/forgotPassword' =>  __DIR__ . '/../view/mail/forgot-password.phtml',
             'aviation.mail.HTMLContentMail' => __DIR__ . '/../view/mail/aviation.mail.HTMLContentMail.phtml',
             'organizations/mail/invite-employee' => __DIR__ . '/../view/mail/invite-employee.phtml',
+            'applications/apply/index' => __DIR__ . '/../view/applications/apply-index.phtml',
         ],
     ],
     'view_helpers' => [
