@@ -54,6 +54,7 @@ return array(
             Listener\AutoJobActivation::class => Listener\AutoJobActivationFactory::class,
             Entity\ApplicationStatusMailTemplates::class => Entity\ApplicationStatusMailTemplatesFactory::class,
             Listener\ApplicationCreated::class => Listener\ApplicationCreatedFactory::class,
+            'Applications/Listener/ApplicationCreated' => Listener\NotifyRecruitersAndDepartmentManagerFactory::class,
         ],
         'delegators' => [
             'Applications/Listener/ApplicationStatusChangePre' => [
