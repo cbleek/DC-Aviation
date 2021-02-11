@@ -32,7 +32,8 @@ class NotifyRecruitersAndDepartmentManager
 
     public function __invoke(ApplicationEvent $event)
     {
-        $job = $event->getApplicationEntity()->getJob();
+        $application = $event->getApplicationEntity();
+        $job = $application->getJob();
         $org = $job->getOrganization()->getParent(/*returnSelf*/ true);
         $admin = $org->getUser();
         $adminSettings = $admin->getSettings('Applications');
@@ -53,10 +54,10 @@ class NotifyRecruitersAndDepartmentManager
         if (count($managers)) {
             foreach ($managers as $employee) {
                 /* @var EmployeeInterface $employee */
-                $managerMail = $this->mails->get(
+                $managerMail = $this->mails->build(
                     'Applications/NewApplication',
                     [
-                        'application' => $this->application,
+                        'application' => $application,
                         'user' => $employee->getUser(),
                         'bcc' => $adminSettings->getMailBCC() ? [ $admin ] : null,
                     ]
@@ -64,13 +65,12 @@ class NotifyRecruitersAndDepartmentManager
                 $managerMail->setBody("Hallo ##name##,\n\nes gibt eine neue Bewerbung für die Anzeige: \n\"##title##\"\n\n##link##\n\n");
                 $this->mails->send($managerMail);
             }
-            return;
         }
 
-        $mail = $this->mails->get(
-            'Applications/NewApplications',
+        $mail = $this->mails->build(
+            'Applications/NewApplication',
             [
-                'application' => $this->application,
+                'application' => $application,
                 'user' => $job->getUser(),
                 'bcc' => $adminSettings->getMailBCC() ? [$admin] : null,
             ]
