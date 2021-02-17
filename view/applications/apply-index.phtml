@@ -81,6 +81,7 @@ else:
      * Display application form container and action buttons.
      */
 
+    $form->getForm('attributes')->get('acceptedPrivacyPolicy')->setOption('url', 'https://www.dc-aviation.com/de/datenschutz.php');
 echo $this->formContainer($form, Core\Form\View\Helper\Form::LAYOUT_HORIZONTAL);
 if ('recruiter-preview' == $this->application->getId()) {
     ?>

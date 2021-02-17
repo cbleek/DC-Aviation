@@ -95,6 +95,9 @@ return array(
         ],
     ],
     'view_helpers' => [
+        'invokables' => [
+            'formInfoCheckBox' => Form\View\Helper\AviationInfoCheckbox::class,
+        ],
         'factories' => [
             View\Helper\FormatLocation::class => InvokableFactory::class
         ],
