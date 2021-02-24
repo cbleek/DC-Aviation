@@ -50,12 +50,14 @@
                     <div class="panel-body" itemprop="qualifications"><?=$this->qualifications;?></div>
                 </div>
             </div>
+            <?php if($this->benefits):?>
             <div class="twelve columns">
                 <div class="panel">
                     <div class="panel-heading"><h4><?=$this->translate($this->labelBenefits);?></h4></div>
                     <div class="panel-body" itemprop="jobBenefits"><?=$this->benefits;?></div>
                 </div>
             </div>
+            <?php endif;?>
         </div>
         <div class="row">
             <div class="twelve columns">
