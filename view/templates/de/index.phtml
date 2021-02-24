@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <?=$this->jsonLd($this->job)?>
+    <title><?=strip_tags($this->headTitle)?></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta property="og:url" content="<?= $this->uriJob;?>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="<?=strip_tags($this->headTitle); ?> - <?=$this->organizationName;?>" />
+    <link rel="stylesheet" href="<?=$this->basePath("modules/Aviation/templates/de/job.css")?>" type="text/css">
+    <style>
+        form > div:hover {
+            background-color: #eee;
+            -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.55);
+            -moz-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.55);
+            box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.55);
+            cursor: pointer;
+        }
+        .company div {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header"><img src="/modules/Aviation/templates/de/1-DC-Aviation-Header.png"></div>
+    <div class="visual"><img src="/modules/Aviation/templates/de/plane.jpg"></div>
+    <main itemscope itemtype="http://schema.org/JobPosting">
+        <!--
+          see: http://yawik.readthedocs.io/en/latest/modules/jobs/index.html#job-templates
+        -->
+
+        <p><?=$this->descriptionEditable ?></p>
+        <div class="row">
+            <div class="twelve columns title" itemprop="title">
+                <?php echo $this->title; ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <div class="panel">
+                    <div class="panel-heading"><h4><?=$this->translate($this->labelRequirements);?></h4></div>
+                    <div class="panel-body" itemprop="responsibilities"><?=$this->requirements;?></div>
+                </div>
+            </div>
+            <div class="six columns">
+                <div class="panel">
+                    <div class="panel-heading"><h4><?=$this->translate($this->labelQualifications);?></h4></div>
+                    <div class="panel-body" itemprop="qualifications"><?=$this->qualifications;?></div>
+                </div>
+            </div>
+            <?php if ($this->benefits): ?>
+            <div class="twelve columns">
+                <div class="panel">
+                    <div class="panel-heading"><h4><?=$this->translate($this->labelBenefits);?></h4></div>
+                    <div class="panel-body" itemprop="jobBenefits"><?=$this->benefits;?></div>
+                </div>
+            </div>
+            <?php endif ?>
+        </div>
+        <div class="row">
+            <div class="twelve columns">
+            </div>
+        </div>
+        <p class="claim">Suchen Sie eine neue berufliche Herausforderung in einem wachstumsstarken Unternehmen? Dann lernen Sie DC Aviation kennen und starten Sie mit uns durch. Wir freuen uns auf Ihre Bewerbung. </p>
+    </main>
+    <div class="footer-bar">
+        <div class="footer-container">
+            <div class="plane"><img src="/modules/Aviation/templates/de/logo_plane.png"></div>
+            <div class="apply">
+                <?=$this->jobApplyButtons(
+                $this->applyData,
+                [
+                'sendImmediately' => true,
+                'oneClickOnly' => false,
+                'defaultLabel' => 'JETZT ONLINE BEWERBEN',
+                'oneClickLabel' => null
+                ]
+                )?>
+            </div>
+            <br clear="all">
+        </div>
+    </div>
+    <div class="company" itemscope="" itemtype="http://schema.org/Organization">
+            <br>
+            <address itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                <span itemprop="name"><?= $this->organizationName?></span>
+                <br />
+                <span itemprop="streetAddress"><?=$this->street?></span><br>
+                <span itemprop="postalCode"><?=$this->postalCode?></span>
+                <span itemprop="addressLocality"><?=$this->city?></span>
+                <br><br>
+                <span itemprop="telephone"><?=$this->phone?></span>
+            </address>
+            <div>
+              <a href="https://www.linkedin.com/company/dc-aviation-gmbh/">
+                <img src="<?=$this->basePath("modules/Aviation/templates/de/linkedin.png")?>">
+              </a>
+            </div>
+            <br clear="all">
+        </div>
+</div>
+</body>
+</html>

@@ -8,7 +8,7 @@
     <meta property="og:url" content="<?= $this->uriJob;?>" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="<?=strip_tags($this->headTitle); ?> - <?=$this->organizationName;?>" />
-    <link rel="stylesheet" href="<?=$this->basePath("modules/Aviation/templates/job.css")?>" type="text/css">
+    <link rel="stylesheet" href="<?=$this->basePath("modules/Aviation/templates/de/job.css")?>" type="text/css">
     <style>
         form > div:hover {
             background-color: #eee;
@@ -24,14 +24,17 @@
 </head>
 <body>
 <div class="container">
-    <div class="header"><img src="/modules/Aviation/templates/1-DC-Aviation-Header.png"></div>
-    <div class="visual"><img src="/modules/Aviation/templates/plane.jpg"></div>
+    <div class="header"><img src="/modules/Aviation/templates/de/1-DC-Aviation-Header.png"></div>
+    <div class="visual"><img src="/modules/Aviation/templates/de/plane.jpg"></div>
     <main itemscope itemtype="http://schema.org/JobPosting">
         <!--
           see: http://yawik.readthedocs.io/en/latest/modules/jobs/index.html#job-templates
         -->
 
-        <p><?=$this->descriptionEditable ?></p>
+        <p>
+            <?php // TODO: Wo wird die Beschreibung gesetzt? Hier muss ein englisches Default rein. <?=$this->descriptionEditable ?>
+            DC Aviation was created in 2007 from the former DaimlerChrysler Aviation, a subsidiary of DaimlerChrysler AG founded in 1998. With offices in Dubai, Zurich, Malta and Moscow, the company's international presence is steadily increasing. Due to its long company history, the DC Aviation Group has extensive experience in the business aviation sector.
+        </p>
         <div class="row">
             <div class="twelve columns title" itemprop="title">
                 <?php echo $this->title; ?>
@@ -50,31 +53,31 @@
                     <div class="panel-body" itemprop="qualifications"><?=$this->qualifications;?></div>
                 </div>
             </div>
-            <?php if($this->benefits):?>
+            <?php if ($this->benefits): ?>
             <div class="twelve columns">
                 <div class="panel">
                     <div class="panel-heading"><h4><?=$this->translate($this->labelBenefits);?></h4></div>
                     <div class="panel-body" itemprop="jobBenefits"><?=$this->benefits;?></div>
                 </div>
             </div>
-            <?php endif;?>
+            <?php endif ?>
         </div>
         <div class="row">
             <div class="twelve columns">
             </div>
         </div>
-        <p class="claim">Suchen Sie eine neue berufliche Herausforderung in einem wachstumsstarken Unternehmen? Dann lernen Sie DC Aviation kennen und starten Sie mit uns durch. Wir freuen uns auf Ihre Bewerbung. </p>
+        <p class="claim">Are you looking for a new professional challenge in a fast-growing company? Then get to know DC Aviation and get started with us. We look forward to receiving your application. </p>
     </main>
     <div class="footer-bar">
         <div class="footer-container">
-            <div class="plane"><img src="/modules/Aviation/templates/logo_plane.png"></div>
+            <div class="plane"><img src="/modules/Aviation/templates/de/logo_plane.png"></div>
             <div class="apply">
                 <?=$this->jobApplyButtons(
                 $this->applyData,
                 [
                 'sendImmediately' => true,
                 'oneClickOnly' => false,
-                'defaultLabel' => 'JETZT ONLINE BEWERBEN',
+                'defaultLabel' => 'APPLY ONLINE NOW',
                 'oneClickLabel' => null
                 ]
                 )?>
@@ -95,7 +98,7 @@
             </address>
             <div>
               <a href="https://www.linkedin.com/company/dc-aviation-gmbh/">
-                <img src="<?=$this->basePath("modules/Aviation/templates/linkedin.png")?>">
+                <img src="<?=$this->basePath("modules/Aviation/templates/de/linkedin.png")?>">
               </a>
             </div>
             <br clear="all">

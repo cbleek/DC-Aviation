@@ -10,19 +10,84 @@
 $id = $this->element->getEntity()->getId();
 $lang = $this->params('lang');
 
+$job = $this->element->getEntity();
+if ($job instanceOf \Jobs\Entity\JobSnapshot) {
+    $linkOptions = ['query' => ['snapshot' => $job->getSnapshotId()]];
+} else {
+    $linkOptions = [];
+}
+
 ?>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-edfault">
+            <div class="panel-body">
+                <div id="template-links">
+                    <script type="text/javascript">
+;(function ($){
+    $(function() {
+
+        $('#template-links a').click(
+            function (e) {
+                e.preventDefault();
+                $('#template-links .btn-group a').each(function() {
+                    var $a = $(this);
+                    if ($a.hasClass('btn-primary')) {
+                        var current = 'btn-primary';
+                        var other = 'btn-default';
+                    } else {
+                        var current = 'btn-default';
+                        var other = 'btn-primary';
+                    }
+
+                    $a.removeClass(current);
+                    $a.addClass(other);
+                });
+
+                var href = $(e.currentTarget).prop('href');
+                $.get(href, function(data){
+                    $(document).trigger('ajax.ready', {'data': data});
+                    // hackishly force iframe to reload
+                    var iframe = $('iframe#editJob');
+                    iframe.prop('src', iframe.prop('src'));
+                });
+                return false;
+            }
+        );
+    });
+})(jQuery);
+                    function toggleButtons() {
+
+                    }
+                </script>
+                    <?php
+                        $active = $job->getTemplate();
+                    ?>
+                    <div class="btn-group">
+                        <a onclick="toggleButtons()" class="btn btn-<?= $active == 'default' ? 'primary' : 'default' ?>" href="<?php echo $this->url('lang/jobs/template', array('id' => $job->getId(),'template'=>'default'), $linkOptions)?>">
+                            Deutsch
+                        </a>
+                        <a onclick="toggleButtons()" class="btn btn-<?= $active == 'en' ? 'primary' : 'default' ?>" href="<?php echo $this->url('lang/jobs/template', array('id' => $job->getId(), 'template'=>'en'), $linkOptions)?>">
+                            Englisch
+                        </a>
+                    </div>
+                    <?php
+                    //$this->headScript()->appendFile($this->basePath('modules/Jobs/js/templates.js'));
+                    ?>
+
+                    <div id="template-links-loading" style="display: none;">loading</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <h3><?php echo $this->translate("Job details")?></h3>
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-body">
                 <iframe id="editJob" style="width:100%; height:800px;" src="<?php
-                $job = $this->element->getEntity();
-                if ($job instanceOf \Jobs\Entity\JobSnapshot) {
-                    $linkOptions = ['query' => ['snapshot' => $job->getSnapshotId()]];
-                } else {
-                    $linkOptions = [];
-                }
+
                 echo $this->url('lang/jobs/editTemplate', array('id' => $id), $linkOptions); ?>"></iframe>
             </div>
         </div>
