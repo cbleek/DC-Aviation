@@ -18,7 +18,9 @@ $job=$this->application->getJob(); /* @var Jobs\Entity\Job $job */
 
         <?php
         echo $this->alert()->warning(
-            'Ihre Bewerbung ist unvollständig. Um die Bewerbung absenden zu können, müssen Sie Ihre Kontaktdaten angeben, zumindest einen Anhang eingefügt haben und die Datenschutzbestimmungen akzeptieren. Sie können jederzeit die Vorschau über Ihre hinterlegten Daten einsehen bzw. den Bewerbungsprozess abbrechen.',
+            $this->params()->fromRoute('lang', 'de') == 'de'
+            ? 'Ihre Bewerbung ist unvollständig. Um die Bewerbung absenden zu können, müssen Sie Ihre Kontaktdaten angeben, zumindest einen Anhang eingefügt haben und die Datenschutzbestimmungen akzeptieren. Sie können jederzeit die Vorschau über Ihre hinterlegten Daten einsehen bzw. den Bewerbungsprozess abbrechen.'
+            : 'Your application is incomplete. In order to submit the application, you must provide your contact details, have included at least one attachment, and accept the privacy policy. You can view the preview of your stored data or cancel the application process at any time.',
             array(
                 'dismissable' => false,
                 'id'          => 'application_incomplete',
