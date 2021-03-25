@@ -45,6 +45,28 @@ class ApplicationStatusMailTemplates
                 TMPL,
             'en_subject' => 'Your application dated %s',
         ],
+        StatusInterface::INQUIRY => [
+            'de' => <<<TMPL
+                ##anrede_formell##,
+
+                um Ihre Bewerbung bearbeiten zu können, fehlen leider noch Dokumente.
+
+                Wir bitten Sie daher um unverzügliche Nachreichung.
+
+                Sie können die fehlenden Unterlagen auch über folgenden Link nachreichen
+                {{link}}
+                TMPL,
+
+            'en' => <<<TMPL
+                ##salutation_formal##,
+
+                unfortunately there are some documents missing to further process your application,
+
+                Please upload the missing documents here:
+                {{link}}
+                TMPL,
+            'en_subject' => 'Your application dated %s',
+        ],
         StatusInterface::REJECTED => [
             'de' => <<<TMPL
                 ##anrede_formell##,
