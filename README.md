@@ -1,13 +1,13 @@
-Aviation
-========
+DC Aviation
+===========
 
-Skin DC Aviation
+Yawik Module used by DC Aviation on https://career.dc-aviation.com/
 
-Build status:
-[![Build Status](https://travis-ci.org/cbleek/Aviation.svg?branch=master)](https://travis-ci.org/cbleek/Aviation)
-[![Latest Stable Version](https://poser.pugx.org/cbleek/aviation/v/stable)](https://packagist.org/packages/yawik/aviation)
-[![Total Downloads](https://poser.pugx.org/cbleek/aviation/downloads)](https://packagist.org/packages/yawik/aviation)
-[![License](https://poser.pugx.org/cbleek/aviation/license)](https://packagist.org/packages/yawik/demo-skin)
+Requirements
+------------
+
+* php 7.4
+* mongodb
 
 Installation
 ------------
@@ -15,8 +15,8 @@ Installation
 you can download and use this skin by:
 
 ```sh
-$ git clone https://github.com/cbleek/Aviation.git MyPath
-$ cd MyPath
+$ git clone https://github.com/cbleek/DC-Aviation.git
+$ cd DC-Aviation
 $ composer install
 ```
 
@@ -32,5 +32,5 @@ To activate the module, create a file in you `test/sandbox/config/autoload` dire
 
 ```
 <?php
-return ['YawikDemoSkin'];
+return ['Aviation'];
 ```
