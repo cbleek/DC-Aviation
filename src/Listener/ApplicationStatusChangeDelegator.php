@@ -97,8 +97,11 @@ class ApplicationStatusChangeDelegator
         /* @var \Applications\Mail\StatusChange $mail */
         $mail = $this->mails->get(ApplicationStatusChange::class);
 
+        $body = $post['mailText'];
+        $body = str_replace('{{link}}', '##link##', $body);
+        $mail->setApplication($application);
         $mail->setSubject($post['mailSubject']);
-        $mail->setBody($post['mailText']);
+        $mail->setBody($body);
         $mail->setTo($recipient);
 
         if ($from = $application->getJob()->getContactEmail()) {

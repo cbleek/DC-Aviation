@@ -35,12 +35,6 @@ trait StringTemplateHtmlMailTrait
         $headers->removeHeader('Content-Type');
         $headers->addHeader(ContentType::fromString('Content-Type: text/html; charset=UTF-8'));
         $this->setEncoding('UTF-8');
-        $this->initCallbacks();
-    }
-
-    protected function initCallbacks()
-    {
-
     }
 
     public function getBodyText()

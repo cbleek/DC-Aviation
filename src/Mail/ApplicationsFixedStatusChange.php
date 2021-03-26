@@ -21,21 +21,11 @@ use Applications\Mail\StatusChange;
  */
 class ApplicationsFixedStatusChange extends StatusChange
 {
-    public function __construct($options = [])
-    {
-        parent::__construct($options);
-        $this->callbacks = [
-            'anrede_formell' => 'getFormalSalutation',
-            'salutation_formal' => 'getFormalSalutation',
-            'anrede_informell' => 'getInformalSalutation',
-            'salutation_informal' => 'getInformalSalutation',
-            'job_title' => 'getJobTitle',
-            'date' => 'getDate'
-        ];
-    }
-
     public static function factory($container, $name, $options = null)
     {
-        return new self();
+        return new self(
+            $container->get('Router'),
+            $options ?? []
+        );
     }
 }

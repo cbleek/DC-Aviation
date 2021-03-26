@@ -68,7 +68,7 @@ return array(
             Mail\ApplicationConfirmation::class => Mail\StringTemplateHtmlMailFactory::class,
             'Applications/NewApplication' => Mail\NewApplicationFactory::class,
             'Applications\Mail\StatusChange' => [Mail\ApplicationsFixedStatusChange::class, 'factory'],
-            Mail\ApplicationStatusChange::class => Mail\StringTemplateHtmlMailFactory::class,
+            Mail\ApplicationStatusChange::class => Mail\ApplicationStatusChangeFactory::class,
         ],
     ],
 
@@ -107,15 +107,20 @@ return array(
             'formatLocation' => View\Helper\FormatLocation::class,
         ],
     ],
-    'translator' => array(
-        'translation_file_patterns' => array(
-            array(
+    'translator' =>  [
+        'translation_file_patterns' => [
+            [
                 'type' => 'gettext',
                 'base_dir' => __DIR__ . '/../language',
                 'pattern' => '%s.mo',
-                ),
-            ),
-    ),
+            ],
+            [
+                'type'     => 'phparray',
+                'base_dir' => __DIR__ . '/../language',
+                'pattern'  => '%s-override.php',
+            ],
+        ],
+    ],
     'form_elements' => [
         'invokables' => [
             'Jobs/Description' => 'Aviation\Form\JobsDescription',
