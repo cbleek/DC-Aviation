@@ -107,15 +107,20 @@ return array(
             'formatLocation' => View\Helper\FormatLocation::class,
         ],
     ],
-    'translator' => array(
-        'translation_file_patterns' => array(
-            array(
+    'translator' =>  [
+        'translation_file_patterns' => [
+            [
                 'type' => 'gettext',
                 'base_dir' => __DIR__ . '/../language',
                 'pattern' => '%s.mo',
-                ),
-            ),
-    ),
+            ],
+            [
+                'type'     => 'phparray',
+                'base_dir' => __DIR__ . '/../language',
+                'pattern'  => '%s-override.php',
+            ],
+        ],
+    ],
     'form_elements' => [
         'invokables' => [
             'Jobs/Description' => 'Aviation\Form\JobsDescription',
