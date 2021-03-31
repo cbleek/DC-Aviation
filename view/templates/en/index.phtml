@@ -26,11 +26,7 @@
 <div class="container">
     <div class="header"><img src="/modules/Aviation/templates/de/1-DC-Aviation-Header.png"></div>
     <div class="visual"><img src="/modules/Aviation/templates/de/plane.jpg"></div>
-    <main itemscope itemtype="http://schema.org/JobPosting">
-        <!--
-          see: http://yawik.readthedocs.io/en/latest/modules/jobs/index.html#job-templates
-        -->
-
+    <main>
         <p>
             <?php // TODO: Wo wird die Beschreibung gesetzt? Hier muss ein englisches Default rein. <?=$this->descriptionEditable ?>
             DC Aviation was created in 2007 from the former DaimlerChrysler Aviation, a subsidiary of DaimlerChrysler AG founded in 1998.
@@ -46,20 +42,20 @@
             <div class="six columns">
                 <div class="panel">
                     <div class="panel-heading"><h4>Tasks</h4></div>
-                    <div class="panel-body" itemprop="responsibilities"><?=$this->requirements;?></div>
+                    <div class="panel-body"><?=$this->requirements;?></div>
                 </div>
             </div>
             <div class="six columns">
                 <div class="panel">
                     <div class="panel-heading"><h4>Requirements</h4></div>
-                    <div class="panel-body" itemprop="qualifications"><?=$this->qualifications;?></div>
+                    <div class="panel-body"><?=$this->qualifications;?></div>
                 </div>
             </div>
             <?php if ($this->benefits): ?>
             <div class="twelve columns">
                 <div class="panel">
                     <div class="panel-heading"><h4>Benefits</h4></div>
-                    <div class="panel-body" itemprop="jobBenefits"><?=$this->benefits;?></div>
+                    <div class="panel-body"><?=$this->benefits;?></div>
                 </div>
             </div>
             <?php endif ?>
@@ -87,24 +83,24 @@
             <br clear="all">
         </div>
     </div>
-    <div class="company" itemscope="" itemtype="http://schema.org/Organization">
-            <br>
-            <address itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-                <span itemprop="name"><?= $this->organizationName?></span>
-                <br />
-                <span itemprop="streetAddress"><?=$this->street?></span><br>
-                <span itemprop="postalCode"><?=$this->postalCode?></span>
-                <span itemprop="addressLocality"><?=$this->city?></span>
-                <br><br>
-                <span itemprop="telephone"><?=$this->phone?></span>
-            </address>
-            <div>
-              <a href="https://www.linkedin.com/company/dc-aviation-gmbh/">
-                <img src="<?=$this->basePath("modules/Aviation/templates/de/linkedin.png")?>">
-              </a>
-            </div>
-            <br clear="all">
+    <div class="company">
+        <br>
+        <address>
+            <span><?= $this->organizationName?></span>
+            <br />
+            <span><?=$this->street?></span><br>
+            <span><?=$this->postalCode?></span>
+            <span><?=$this->city?></span>
+            <br><br>
+            <span><?=$this->phone?></span>
+        </address>
+        <div>
+            <a href="https://www.linkedin.com/company/dc-aviation-gmbh/">
+            <img src="<?=$this->basePath("modules/Aviation/templates/de/linkedin.png")?>">
+            </a>
         </div>
+        <br clear="all">
+    </div>
 </div>
 </body>
 </html>
