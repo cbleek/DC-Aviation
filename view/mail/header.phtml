@@ -4,220 +4,306 @@ $options     = $this->services('Core/Options');
 $logoUrl     = "https://career.dc-aviation.com/static/Organizations/Image/7/a/5e6a55d266255b2d2c263ba7.png";
 $homepageUrl = $this->serverUrl($this->basePath('/'));
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-  <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="format-detection" content="telephone=no" /> <!-- disable auto telephone linking in iOS -->
-    <title>DC Aviation</title>
-    <style type="text/css">
-      /* RESET STYLES */
-      html { background-color:#E1E1E1; margin:0; padding:0; }
-      body, #bodyTable, #bodyCell, #bodyCell{height:100% !important; margin:0; padding:0; width:100% !important;font-family:Helvetica, Arial, "Lucida Grande", sans-serif;}
-      table{border-collapse:collapse;}
-      table[id=bodyTable] {width:100%!important;margin:auto;max-width:500px!important;color:#7A7A7A;font-weight:normal;}
-      img, a img{border:0; outline:none; text-decoration:none;height:auto; line-height:100%;}
-      a {text-decoration:none !important;border-bottom: 1px solid;}
-      h1, h2, h3, h4, h5, h6{color:#5F5F5F; font-weight:normal; font-family:Helvetica; font-size:20px; line-height:125%; text-align:Left; letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title><?=$this->title?> - DC Aviation GmbH</title>
+	<!-- The title tag shows in email notifications, like Android 4.4. -->
+<style>
 
-      /* CLIENT-SPECIFIC STYLES */
-      .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail/Outlook.com to display emails at full width. */
-      .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div{line-height:100%;} /* Force Hotmail/Outlook.com to display line heights normally. */
-      table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up. */
-      #outlook a{padding:0;} /* Force Outlook 2007 and up to provide a "view in browser" message. */
-      img{-ms-interpolation-mode: bicubic;display:block;outline:none; text-decoration:none;} /* Force IE to smoothly render resized images. */
-      body, table, td, p, a, li, blockquote{-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; font-weight:normal!important;} /* Prevent Windows- and Webkit-based mobile platforms from changing declared text sizes. */
-      .ExternalClass td[class="ecxflexibleContainerBox"] h3 {padding-top: 10px !important;} /* Force hotmail to push 2-grid sub headers down */
+html,
+body {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    background: #f1f1f1;
+}
 
-      /* /\/\/\/\/\/\/\/\/ TEMPLATE STYLES /\/\/\/\/\/\/\/\/ */
+/* What it does: Stops email clients resizing small text. */
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
 
-      /* ========== Page Styles ========== */
-      h1{display:block;font-size:26px;font-style:normal;font-weight:normal;line-height:100%;}
-      h2{display:block;font-size:20px;font-style:normal;font-weight:normal;line-height:120%;}
-      h3{display:block;font-size:17px;font-style:normal;font-weight:normal;line-height:110%;}
-      h4{display:block;font-size:18px;font-style:italic;font-weight:normal;line-height:100%;}
-      .flexibleImage{height:auto;}
-      .linkRemoveBorder{border-bottom:0 !important;}
-      table[class=flexibleContainerCellDivider] {padding-bottom:0 !important;padding-top:0 !important;}
+/* What it does: Centers email on Android 4.4 */
+div[style*="margin: 16px 0"] {
+    margin: 0 !important;
+}
 
-      body, #bodyTable{background-color:#E1E1E1;}
-      #emailHeader{background-color:#E1E1E1;}
-      #emailBody{background-color:#FFFFFF;}
-      #emailFooter{background-color:#E1E1E1;}
-      .nestedContainer{background-color:#F6F6F6; border:1px solid #CCCCCC;}
-      .emailButton{background-color:#205478; border-collapse:separate;}
-      .buttonContent{color:#FFFFFF; font-family:Helvetica; font-size:18px; font-weight:bold; line-height:100%; padding:15px; text-align:center;}
-      .buttonContent a{color:#FFFFFF; display:block; text-decoration:none!important; border:0!important;}
-      .emailCalendar{background-color:#FFFFFF; border:1px solid #CCCCCC;}
-      .emailCalendarMonth{background-color:#205478; color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; padding-top:10px; padding-bottom:10px; text-align:center;}
-      .emailCalendarDay{color:#205478; font-family:Helvetica, Arial, sans-serif; font-size:60px; font-weight:bold; line-height:100%; padding-top:20px; padding-bottom:20px; text-align:center;}
-      .imageContentText {margin-top: 10px;line-height:0;}
-      .imageContentText a {line-height:0;}
-      #invisibleIntroduction {display:none !important;} /* Removing the introduction text from the view */
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+table,
+td {
+    mso-table-lspace: 0pt !important;
+    mso-table-rspace: 0pt !important;
+}
 
-      /*FRAMEWORK HACKS & OVERRIDES */
-      span[class=ios-color-hack] a {color:#275100!important;text-decoration:none!important;} /* Remove all link colors in IOS (below are duplicates based on the color preference) */
-      span[class=ios-color-hack2] a {color:#205478!important;text-decoration:none!important;}
-      span[class=ios-color-hack3] a {color:#8B8B8B!important;text-decoration:none!important;}
-      /* A nice and clean way to target phone numbers you want clickable and avoid a mobile phone from linking other numbers that look like, but are not phone numbers.  Use these two blocks of code to "unstyle" any numbers that may be linked.  The second block gives you a class to apply with a span tag to the numbers you would like linked and styled.
-      Inspired by Campaign Monitor's article on using phone numbers in email: http://www.campaignmonitor.com/blog/post/3571/using-phone-numbers-in-html-email/.
-      */
-      .a[href^="tel"], a[href^="sms"] {text-decoration:none!important;color:#606060!important;pointer-events:none!important;cursor:default!important;}
-      .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {text-decoration:none!important;color:#606060!important;pointer-events:auto!important;cursor:default!important;}
+/* What it does: Fixes webkit padding issue. */
+table {
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    margin: 0 auto !important;
+}
+
+/* What it does: Uses a better rendering method when resizing images in IE. */
+img {
+    -ms-interpolation-mode:bicubic;
+}
+
+/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+a {
+    text-decoration: none;
+}
+
+/* What it does: A work-around for email clients meddling in triggered links. */
+*[x-apple-data-detectors],  /* iOS */
+.unstyle-auto-detected-links *,
+.aBn {
+    border-bottom: 0 !important;
+    cursor: default !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+
+/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+.a6S {
+    display: none !important;
+    opacity: 0.01 !important;
+}
+
+/* What it does: Prevents Gmail from changing the text color in conversation threads. */
+.im {
+    color: inherit !important;
+}
+
+/* If the above doesn't work, add a .g-img class to any image in question. */
+img.g-img + div {
+    display: none !important;
+}
+
+/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+/* Create one of these media queries for each additional viewport size you'd like to fix */
+
+/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+    u ~ div .email-container {
+        min-width: 320px !important;
+    }
+}
+/* iPhone 6, 6S, 7, 8, and X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+    u ~ div .email-container {
+        min-width: 375px !important;
+    }
+}
+/* iPhone 6+, 7+, and 8+ */
+@media only screen and (min-device-width: 414px) {
+    u ~ div .email-container {
+        min-width: 414px !important;
+    }
+}
+
+</style>
+
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+<style>
+
+.primary{
+	background: #f3a333;
+}
+
+.bg_white{
+	background: #ffffff;
+}
+.bg_light{
+	background: #fafafa;
+}
+.bg_black{
+	background: #000000;
+}
+.bg_dark{
+	background: rgba(0,0,0,.8);
+}
+.email-section{
+	padding:2.5em;
+}
+
+/*BUTTON*/
+.btn{
+	padding: 10px 15px;
+}
+.btn.btn-primary{
+	border-radius: 30px;
+	background: #f3a333;
+	color: #ffffff;
+}
 
 
-      /* MOBILE STYLES */
-      @media only screen and (max-width: 480px){
-        /*////// CLIENT-SPECIFIC STYLES //////*/
-        body{width:100% !important; min-width:100% !important;} /* Force iOS Mail to render the email at full width. */
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.8;
+	color: #000000;
+}
 
-        /* FRAMEWORK STYLES */
-        /*
-        CSS selectors are written in attribute
-        selector format to prevent Yahoo Mail
-        from rendering media query styles on
-        desktop.
-        */
-        /*td[class="textContent"], td[class="flexibleContainerCell"] { width: 100%; padding-left: 10px !important; padding-right: 10px !important; }*/
-        table[id="emailHeader"],
-        table[id="emailBody"],
-        table[id="emailFooter"],
-        table[class="flexibleContainer"],
-        td[class="flexibleContainerCell"] {width:100% !important;}
-        td[class="flexibleContainerBox"], td[class="flexibleContainerBox"] table {display: block;width: 100%;text-align: left;}
-        /*
-        The following style rule makes any
-        image classed with 'flexibleImage'
-        fluid when the query activates.
-        Make sure you add an inline max-width
-        to those images to prevent them
-        from blowing out.
-        */
-        td[class="imageContent"] img {height:auto !important; width:100% !important; max-width:100% !important; }
-        img[class="flexibleImage"]{height:auto !important; width:100% !important;max-width:100% !important;}
-        img[class="flexibleImageSmall"]{height:auto !important; width:auto !important;}
+a{
+	color: #f3a333;
+}
+
+table{
+}
+/*LOGO*/
+
+.logo h1{
+	margin: 0;
+}
+.logo h1 a{
+	color: #000;
+	font-size: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+}
 
 
-        /*
-        Create top space for every second element in a block
-        */
-        table[class="flexibleContainerBoxNext"]{padding-top: 10px !important;}
 
-        /*
-        Make buttons in the email span the
-        full width of their container, allowing
-        for left- or right-handed ease of use.
-        */
-        table[class="emailButton"]{width:100% !important;}
-        td[class="buttonContent"]{padding:0 !important;}
-        td[class="buttonContent"] a{padding:15px !important;}
+/*HEADING SECTION*/
+.heading-section{
+}
+.heading-section h2{
+	color: #000000;
+	font-size: 28px;
+	margin-top: 0;
+	line-height: 1.4;
+}
+.heading-section .subheading{
+	margin-bottom: 20px !important;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(0,0,0,.4);
+	position: relative;
+}
+.heading-section .subheading::after{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #f3a333;
+	margin: 0 auto;
+}
 
-      }
+.heading-section-white{
+	color: rgba(255,255,255,.8);
+}
+.heading-section-white h2{
+	font-size: 28px;
+	font-family:
+	line-height: 1;
+	padding-bottom: 0;
+}
+.heading-section-white h2{
+	color: #ffffff;
+}
+.heading-section-white .subheading{
+	margin-bottom: 0;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(255,255,255,.4);
+}
 
-      /*  CONDITIONS FOR ANDROID DEVICES ONLY
-      *   http://developer.android.com/guide/webapps/targeting.html
-      *   http://pugetworks.com/2011/04/css-media-queries-for-targeting-different-mobile-devices/ ;
-      =====================================================*/
 
-      @media only screen and (-webkit-device-pixel-ratio:.75){
-        /* Put CSS for low density (ldpi) Android layouts in here */
-      }
+.icon{
+	text-align: center;
+}
+.icon img{
+}
 
-      @media only screen and (-webkit-device-pixel-ratio:1){
-        /* Put CSS for medium density (mdpi) Android layouts in here */
-      }
 
-      @media only screen and (-webkit-device-pixel-ratio:1.5){
-        /* Put CSS for high density (hdpi) Android layouts in here */
-      }
-      /* end Android targeting */
+/*SERVICES*/
+.text-services{
+	padding: 10px 10px 0;
+	text-align: center;
+}
+.text-services h3{
+	font-size: 20px;
+}
 
-      /* CONDITIONS FOR IOS DEVICES ONLY
-      =====================================================*/
-      @media only screen and (min-device-width : 320px) and (max-device-width:568px) {
+/*FOOTER*/
 
-      }
-      /* end IOS targeting */
-    </style>
-    <!--
-      Outlook Conditional CSS
+.footer{
+	color: rgba(255,255,255,.5);
 
-      These two style blocks target Outlook 2007 & 2010 specifically, forcing
-      columns into a single vertical stack as on mobile clients. This is
-      primarily done to avoid the 'page break bug' and is optional.
+}
+.footer .heading{
+	color: #ffffff;
+	font-size: 20px;
+}
+.footer ul{
+	margin: 0;
+	padding: 0;
+}
+.footer ul li{
+	list-style: none;
+	margin-bottom: 10px;
+}
+.footer ul li a{
+	color: rgba(255,255,255,1);
+}
 
-      More information here:
-      http://templates.mailchimp.com/development/css/outlook-conditional-css
-    -->
-    <!--[if mso 12]>
-      <style type="text/css">
-        .flexibleContainer{display:block !important; width:100% !important;}
-      </style>
-    <![endif]-->
-    <!--[if mso 14]>
-      <style type="text/css">
-        .flexibleContainer{display:block !important; width:100% !important;}
-      </style>
-    <![endif]-->
-  </head>
-  <body bgcolor="#E1E1E1" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
 
-    <!-- CENTER THE EMAIL // -->
+@media screen and (max-width: 500px) {
 
-    <center style="background-color:#E1E1E1;">
-      <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="table-layout: fixed;max-width:100% !important;width: 100% !important;min-width: 100% !important;">
-        <tr>
-          <td align="center" valign="top" id="bodyCell">
+	.icon{
+		text-align: left;
+	}
 
-            <!-- EMAIL HEADER // -->
+	.text-services{
+		padding-left: 0;
+		padding-right: 20px;
+		text-align: left;
+	}
 
-            <!-- // END -->
+}
+</style>
+</head>
 
-            <!-- EMAIL BODY // -->
-
-            <table bgcolor="#FFFFFF"  border="0" cellpadding="0" cellspacing="0" width="500" id="emailBody">
-
-              <!-- MODULE ROW // -->
-
-              <tr>
-                <td align="center" valign="top">
-                  <!-- CENTERING TABLE // -->
-
-                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#FFFFFF;" bgcolor="<?=$this->mail_blue_color?>">
-                    <tr>
-                      <td align="center" valign="top">
-                        <!-- FLEXIBLE CONTAINER // -->
-
-                        <table border="0" cellpadding="0" cellspacing="0" width="500" class="flexibleContainer">
-                          <tr>
-                            <td align="center" valign="top" width="500" class="flexibleContainerCell">
-
-                              <!-- CONTENT TABLE // -->
-
-                              <table border="0" cellpadding="30" cellspacing="0" width="100%">
-                                <tr>
-                                  <td align="center" valign="top" class="textContent">
-<h1 style="color:#FFFFFF;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:bold;margin-bottom:5px;text-align:center;">
-DC Aviation
-</h1>
-<h2 style="text-align:center;font-weight:normal;font-family:Helvetica,Arial,sans-serif;font-size:23px;margin-bottom:10px;color:#fff;line-height:135%;">
-<?= $this->title ?>
-</h2>
-                                  </td>
-                                </tr>
-                              </table>
-                              <!-- // CONTENT TABLE -->
-
-                            </td>
-                          </tr>
-                        </table>
-                        <!-- // FLEXIBLE CONTAINER -->
-                      </td>
-                    </tr>
-                  </table>
-                  <!-- // CENTERING TABLE -->
-                </td>
-              </tr>
-              <!-- // MODULE ROW -->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;">
+<center style="width: 100%; background-color: #f1f1f1;">
+<div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+	&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+</div>
+<div style="max-width: 600px; margin: 0 auto;" class="email-container">
+	<!-- BEGIN BODY -->
+	<table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+		<tr>
+			<td class="bg_white logo" style="padding: 1em 2.5em; text-align: center">
+				<img  alt="DC Aviation GmbH" border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbUAAABHCAYAAACAh9l7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA6ppVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcFJpZ2h0czpNYXJrZWQ9IkZhbHNlIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InV1aWQ6NkNGM0EwMTJGMzAxRTQxMUIwMzdENEQ0RUQwQTBFNDEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjFFRTcwNkE1M0JCMTFFNEJCMzJCNTE1REMwMEQyREMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjFFRTcwNjk1M0JCMTFFNEJCMzJCNTE1REMwMEQyREMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTMyBXaW5kb3dzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InV1aWQ6OTVDMjc2NTc0MTM0RTQxMTgwMDRGN0Y3RTlEQjNGQUQiIHN0UmVmOmRvY3VtZW50SUQ9InV1aWQ6RkZDNDY0OENDODE4RTQxMUIxQTJBNDFDMkRDQTE4OEIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6nB6ECAAAdv0lEQVR42uxdCZgUxRV+s8uyy3IJigeKt2KQRJBo4pFoPEDlijcqIJhgNIe3RKMGNBpjjPcRD1SMivcRBI2KymGC4h0VPBDwREHBsAK7C7uT+r/+65vaprpnpmdmWfD93/e+6Z6+qqur3//eq1fVqXQ6LQqFQqFQrA8o0ypQKBQKhZKaQqFQKBRKagqFQqFQKKkpFAqFQhGLVkkOmjhpstbcdxMdjWxlpIuRSiONRr418qWRBUZWcb/BRvoZucPIy0W4Lq55qJH+RrobqTCCDKcUfz8x8pyRh4y82sx1sp2R84w8a+QebSIKRXExaED/0pOaouQYb+R7RlYbqSV5pLjN94v9vjHyjpEXjcw08r8ilaW9kUNIVHsY2YyE5mKZkY+NTDNyt5G+Rk42MqtAUtvUyLlGRnF9hpHbjLxPMq0k4e1m5AQj5xh51MgYI28107MabmSkkT2NPGJkpTZfhWId89QUJQdIYikJC0RS7iEzu+z+P5jLHxr5h5FbjXxVQDmGGRltZGfnGsuNzOMvwtedjWxtpCflVyQcoL6Aa+9Pcsf5/2rkdhJnFDrTm7vAyBtGzjByTYmfU7WRo7kMD/KnRp7S5qtQKKkpmuIU/pbT8+ohQZhtupHr+L8lGfzfwUhvCUJ+UK4IiV1kZKiRs4w8mef1QRDXGjnWuc50Esu/jSykR1LGa4PUDjMywsjmRjYo8P6PNPKAkeeN/JIkmg1L6MXhuIuNXM1ynV7C53QQ69tiqJKaQqGkpohGZcgzm2/kiYh90Z9zoZEh9FYQJtxRgn6ms43cmOM1u/GY3bj+Db019I81hPZtJJlAXjNyA699gqwZoswV/UhME3ieujyPrzFyqpGPjFwhQRh2bImez1APyYHUP9Omq1CsHWj2Y8uH9caAihwUOkKO+5FkgNb0un6dw7U6GbnPITQkgKCXdpyH0HxYyOvc45Q9H2zO6yPp4vgEhObiSpLZGJJNsdGdBOxiIwlCoAqFQklNEYEk85jNlSCE975zjssl6KeKw1+M/Jj7I5MRob+ZCa6/KAGpoS1ezWOQfLG6CHX3JwmSVxCW7Fzk54LQLPrU/mVkYuh/jYAoFEpqiiIDSRUnOd4OwoFXSZCW7wO8mV84RATvLOnYjXH0Yp7J45it6Okgk/DzItUBwqPInJxDsi4W2hk5hsu3kjQtfkhRKBRrAWpRrlseW75eG1Lg7yZZAT24fKWnHYx2CA3Zl1cUUNYPKfmSMIYOtDHyfSMbUjbgf235WxWqB5QZWZZIXFlBQRj2awpCogMlt/BproABsIMEfWdTaBxiGeFThIiPkyDBxwcYF+WeZ5liGevyOCYX1JHc49CLdfQ38Q9JwPWvN/ImDZZ8w8p4bpfx+OtzvJ/aLNvRX/wDthF49fN5/q9jDHhfP2+2IRhVMfebZv3qrPBKaooEZJZKePyNVLJtuD7CyM0SpORboA9tb+d6yJac1wz3tg29mj5UUtuQGDqSHFIFnn8V73MhSRNh2dclGKD9VgFEN5y/D9IAAB6nZwxgaMVYj4LFM3jayLYSDHuwZIN+z2qWbUCIhFqTOLfjMQ3ct8yjnBscRWzrD2V9Nsv9YPD4ERL0w06O0BP9aRCN9jyXWsmEi+210yFC6SrBEA1gkgTDRBpohNj7rea1VrAOZ3vKAsPnNxKMhWwVek8wCP8Btvn5HuJ+VDLjOmt5fYTcowbNY4zmUyz7aqestpxIkDqU11UoqSkSIImS/6+R/0iQPJKit7a7BOnyFv0lM0xApPRp6ciwvNPIPlLaEHgFPT0IBrO7iR1QmKeTZPLBTkYOIGFOcP5Hgssv+U5147UmhI6FQvyABLSfU+fvShAi/chj9adJxshCxQBv9A1iQPvikLfzY8kMpcAg/AUsy7dZ7sdNeDkhgtTSVOifsT21Chlcu9NjCl/b3nMFt9c5nnwDn/2+kkmAQv/tUtZtbagMMHQQPh/J9QWs8zkkH/QX/9zImUaO4rN9JET6s0lOyAzuzbJfz/ua6rlv+7y+pnGxD4/5N+u1RjKz6CiU1BTNiOlUohY/cUgNiuVHIe/mjRKXpwMV8hNUYjVUEiuofKzUUawXYi3sVEjhVjihpbZs1zZUWcXlam5rx+tDyW6coOzW631Oms6WMpPeX2/Hm7s3RFJ1JA7gDnrNQs9xaIy3OZJln8266EuSc4FklYFcRoLM/TnezwiSgpDcekR4SB3p6Zzo2Yb7HMLli0k2YQ91PuteHI+2jNfqzvsaRVIMoxM9sAO4fic9xkXOPjewXsbRqHiA1xnH7SC/g7ncjtGIPXjv4+kBhu8bXv7xzv2/zedwgsRPBKBQUlPEIB2yipNgjmSGBqTotbghli0dTxAk83mJ7+kdWr1xHmkrx4JvI/4ZVXz1tFIy2Zurpbj9He0d5X1XaFs9lXlvx3DYmYrQBwxkH0ZyH0zF/l7MtQ/lc7rUQ2jhesn1vd4wRKZtSdrnefb9iOE2H8qyXLuMxy/y6J8yp/zlEcfe4BDao44xEAa87sMlSFDqQC9srscLgwH1JkkNQMj7HpLi4ohz21l9UqIJdkpqiqITXL5YRCVvSWLTkCLr5Jz/G0/oJyl6UVlb76g9pR09p3a8flvHq2rNcpY5Sq615B56red9NDB8tMoJZ9WS9L51PEMbRoIs4y9CWy956htKb3sJ+ugmea79mJHzeY+4vyNjSA0hrFlUrO1ILhfEkMaJJOm7YgwByUL8YYAAtjDyggThS+gDDEnAtGTu3KEr6cXVJ7w26rm/5/iyLOvCOrSZphg3eUqWe4L3jKSUS9huMExkL2nah2zblFvmnvTYDhN/sk5ZlnIqlNQUzYhVsmbygbvsrjcW0bs5U6LDai0ZCC0eJGv2l9jQIRJEfHNqYlwgwrqDuH40CWK5Z99GemvWW0A9/U38E1H3oef3BL3uYr37v6URg7AfwnXIOt1agjDm3SFj6usCjbEkc5CiXY521jGf6ac5HHeLBMkkm/GejpRMkkoYb5HQrNECEjy5BIalQklNEXqRCskEbMNnbc9T42yz/VbtHc+tokjlPotWc6XjrXXkcmvJ9HFVO1LJ/8slk7FZSYlTKCmS0Eou1zrrdZLpr7MeWg3/X04PbZnz3xIPoaGvaX9uvz2mHLeRFFAGZHT+LMKrs54dpjbrSjKBNzPBs98w/t5cxDa1PxU+zolElUe4bsn7nhagwOE99nbegUdzPA4EjFCk7Q9DSPXOiPtBiHIHGmDYjgxP9JddqoSmpKYoHaEVik0ZMrHE6PaZLacS34jrXShLi3DdLyk+tJdMaLChGeuzjO2+kgSXa/0O5TEvs266eQwNnGuBBOHJrtx+XAypwXvBPJunOGQSJjU8F4QEMcRiShHr4WSW1xIlPLMz+FzgFSJ56MW13Pb3CLXZuXkc+6JDaj3ptfn6imE8nU9C78s6GUNi0+/jKakpWih6htbd7Ebbh7Qj19GvhUGt75ewPAinPUfPaRmJdaXjXdXSI7J9YHa8WQOVnP2vjF6d9dTaSSbzsdL5tSFW6w1CcSNJ4lyGm7IBHuZRTtnnSHS/ih3HZNGPXtiCiP3HS/C5HpRzH5LJS872wSzrVfQwiwE83wEkSdsWQBhP8j5Rh8NbAKlt4yx/EYowZMPHoecXRWq4V/RVjqR314PPFvOlYvzZdFUfSmqKluWt2bFA9jyrQi8q/ptJK9XiAHoQpQLGKSEsiTBdLxJpcwHEiLFHj0run+RB3WxHkv1Q/Fl6bn3ivdqeRNuJxBT1bbc3+TwO5HHDHFLDdUaRzCYUsQ5G8NzXhdrWrQ55YzD2xVL6TNg4uDOA1Et+84HWh/Rc6yzv1SLWPfotN6GBhGEXSPV/r8iRE4WSmqIAYLaQXZ31V2TNsUAYcPsHyfSlwYrfWNZMwS4WkJzwZwn6LbaiJwkS2FYys4p0poXdhgq4XOKzzmzGo51qClb9Ulr48ynwRmaT1PL5gOkIR+mfkcP+1SSqXbiO8OGN4h+oaxNGDnTIBJl7C+m1QR6QNWfISIpNeD+zWUaXOGaxfWCWF4Sgj5TSf2g1Dl+HvK02eXhrHZxlePa5fAn+LRoR97Ne0A7vIrHVSeEz3CiU1BRFwO+kaeLHDR7liumZnuHLKwzV4BMyYxNeE1Zue5JKbRYiWkABaXVlyKeCCgxJJW0daU1lY6dhsvMl2rClnfsRfWU2rFlHRV6bo2ILA30t+/H8d+boLeDa9zmkhpDlHhIdyppMot2BZT2CXtTxDpkWC0PoPeIZvRrSAaupyC0Qgvy7FPYF80LgDofYgoZOrqTmfrwVhs1HOR6Hry6cxfoHEKq9SYKB3PWSSV5StFDoeIv1G4OpIG3IBHMAPhLhLVwWUl6nhjy8fHA6vcGj8zgGyhTTef2JBLKMBPculS8IYQoJAFmD/+Tv4yTkqfQ03iZJLiGhDSBh7JXwXo6lIptB8s8VDzkKuFwyg7Z9qJGms3AMYX0cSe9hRpHaQxU9kRoq7/fosVl5j3Vsy43nv/9abL8znLJ0lKYz32TDT53laeIfVhEFGBHupN9oQ1dIZriLhiCV1BRFQL4vEizMa51njFDOaRI9V90LoRcZSuQOeg75ooPjDeQKdOxjSiNkou1ZpDrrTM8UpPh0guM7OsR8h2Sf7d7FXGk6kTDmJewSs//djuLtRU8BdXi7FPaxVBdIWtmZHifG0vWnd24F6+jnfNA5ZsRabPMf0nixyHXMI5I9fsJltPfxCa59AevBkthRkpnYWKGkpmhm7E+PbDPHEzieXk8cxoQ8OYTeMKfgjnle3yZS5JuqD28RSRJIpd6iwDpoReWNzMFfJVRGUPTb0GNM8m05dwDzZpKZm9EHZJvaxBX0yWFaLPRpPlDEdnES6+GWLPuNdwgcdbDDWmzL6He1YWOQ7sE5HINpvmxWLNpSkg/dou1iAPeLBRqXCiU1hYPw3IXZZgSHhYpZKZDZ143HIuEA0ww9leP1QH73Ov8h0WQqiaFtluO3ohIamfB+0e9lJwxGebdNeJ52JJQB9LSSDk8Y7ijGJOP2MD7NzZwbkmX/O0Lr8FJyzT5sDD3HMHrTU0PI9q0s55ohmZBnuxw8pGzXjkJ9Du0bYdGzHH0Fz3unmHOeLplptfBFgXOzlDnO8FrGtrxAyWzdgSaKtExswGdTFTI8kHhwpmQmV7XPcGMS2q4h4nmYVms+mXMrSGzoE/u9BKFEDN5GwsCvSZgIVX5KpVRNJXMQPRF35vvKBPeOkNOBVL6v0VrOZxAsPoNyE+vq8AQeFuqvs2RmA4GifY5GAvClZE+csOFX7Idps2zSAsahHUCiWyZrJq7gOm+y7I2SPWzWkW2kMVTX+H8jaZqt91uuo6+vC6/vC2umePwkyUw6DZJAFuBilrmcdWQnyQ5fe0O2S5zfN/lyZ25vJU2HR9iB/0IjwhLkONbnpfScn+J7gGdrP/KJ54N+YJudir7VI6VpBq+da7RBMsNI7BcbKlgn4bGAC0hsj0kmo1KzIFswUul0/gbIxEmTteZKi0kkinLJfCPLzgiSCnna4dnr8RJPo0J8rsByoP8F/XCHUhGFvbr6CO9tMUM+YyW/5AoXG9MqP4Ikej0JwjfMoD0JfRQ9vdfpWb6c4LqYJulaaTqAerlTv/1YnmzhrwtYR5Ue43El7+1sz7HwSi6np7SvxPfj3cfyNIaeD55LDduHzRLt5JAF/rNjsnyE/CyJuH3I2EG7siHZ/0hm6rLwtZfxnl+QNUOuren578RybeBs+5bH19JICnuU6Ae8jMem6YG/R7Lqw7KjLjBH5DmetnIJ20UDiSzNZ/QNSe2PEgy98AF9ohO4f2/J/8vuioQYNKC/emrrAZ6mp9QoTUOQvs+vlFPhLOFL/o4Ub8DsOyQKKBL009nPqYBw2lBpfkVl9Am9DCiyWVL4uKpFtLQH0WO8j8oHiu4DKm1Y2wh5ou9vc14Tlvotkl+2WzjcdbtkPl2TkqZf4V6YwzngYd4qmS8FrA69cxUkBR/up0c8XrInpjzP+m+QppNWV0jTD4iKs701t30SExKcSE+v3iHFKkeR19B7bu0QQ0Po2mXi/5QOyoCM1Ve57F7Dfp2hXvyfuZlIsj+ChhbG0/XltT8n6UyIMTpeIVE3OGVu5ZQ3brLox2isHCVrb4iDQj01RQlQTiu3morIWuY1Jb4u+vYQltydBFZBpbiYZDqFymzFelDHm4h/UmVFU3Sip7eaRlBdM7X/Yn7JQqGemmIto0FKN9NIHF6WZOHEdRFfajPLCUulOBNv59v+FS0Ymv2oUCgUCiU1hUKhUCiU1BQKhUKhUFJTKBQKhUJJTaFQKBRKagqFQqFQrFtImtJvyTDt/IanjvHNfJFylt1fK+We9XLPuiutQutlof9ahbZVOOdqFXHestCxKc9+qdByWYRE3XO4XlKedclhXSLWJWa7bx8fUnn+r1A0F9IJt0Xtl444Nu35dfdp9CynPdLo/Ero/0bPPu6y/fitOMv2o7iNnt/Vof8aItYbQvuujtiWbf/G0LkbQ/+nQ9vce3WXo+qzWUgtHfPwfQow7RCf/W0MKeg4wosiwTgSKXfW45ZTMeeIu76EtvuIyUdcUQQVRVLhZR+5ZCO0pMSk5KVY3wgv2z7pLPtE6b50xHraQ3RRxJeOIMZG5//GCEL0kWFYfP83OMc3RBwXdZ6GCEKOKls6i8TVcbOQWq776Mh7hUKhUDQLtE9NoVAoFEpqCoVCoVAoqSkUCoVCoaSmUCgUCoWSmkKhUCi+I9BPz7RMbGfkYAm+AAzgy752GAQ+Uz9d9FtbimTtCh/Y7EGDFh+VfdDIu1o1CvXUFKVEmgbHRUb+aqS7kS2N7CXBl30fMdJVq0mRB8428l8jxxj5wshHRgZK8JXusaoLFOqpKUqJeUauluDT8fiy78nOtiFGbjVyuZFhknDUveI7hT8bOZfkdYkEM0EA5xsZbeQytrPTtKoU6qkpSmlwQBB27OD8f5+RV4wcYmTzEl07VaJ91xe0XofenYNJaPcYudAhNAtEAm4zcqqRwevp86rMYbvOnqOemqIZEOWFfWJkdyMduRxGfyM7U2Flw05GxhjZyMhXEvTjnW7kmwgj6NdGDjdSw30nG7nTs+8pRr5vZKmRDY28bOSmGGI81sjRRqqNfM19n4/YH9ObncF7nGvkSiMruK2Pkd+w/KifF4zckVARggy6GFlupD3LWcX/hrAOfOhIkvgJy/q6kWuMfByx/75GhhtZwneymuTzHyMPSaZvNV/g2udw+YqY/bBtBO93kmTmGRS2i/MkmDO1lusgwRlGTmQ7rGGZrzXyTsQ1NqHHeArr04dNjfzRSD3L0IHt4NWYc54nmXkFUe/jjLwU2u86Pr8lfKeWs7yonzZ8pqOccg2kYP86I1exPeEZ9eL+OOccVVHqqSkK95rwMv7QyCIjn0YcA8UxmmQSB/TT/cvI/4xcTEW1H190Hy4w8gcjN/ClhoLbJWLfN6lAzibhvBXj9Uyg0p/McrxL5XpOxDHoc3yNJPwnlsdiMQn0GCqp2QnrHUry31ScuIf5RqYaeZGkVhVxXHd60gdKEEL+i5GtjMwysk/EMZ+xvs40squRZ3lvd9FgKE94D9sY+THr8+2Y/T5gPYGgvhfaVkfDYDcSNQj6c26z5zyM9bIk5howhE4wsn/MPmgn04z0JWG+yOcZhZUsG855Ep/7Is/7sy3LOo33cxaNlmm8n+1C3tx8luU0Hvst/5/H+/gqy70q1FNTZCE0GzKqopLckgrf5031ogcDy/TntKqjAOXRjR7dPL7kqQjPAORzPL2nh/gfLPSoEOg0KgoopwdIED6ModcDhT+d/02lh3cVle1Ejwf7LJX1SfQy5pHg4A39nVb1fR6rPVegzp8x8gMjh5JcvuS2lx1FFzY4JtCrOdjZ52mWF/XQ2yEFl1RuotEAr+R+/r+FkZE0JD5McA/d+NygpFdludcF9Ky3ChEgnvHDNHa2pAFh2yM8yU5Gts7iDVfyGcNQ+IXneVos470fRYP7tiz3t4x1Oph1f0vEfpewbeH6X5CsnjDyT26f43j6lqxPY13sbWQzRkS2N/IUvUmFemqKhKRWx5cJxPM4lSUI7fqIY05iOGkWCSXOyl/I33EM2wmV1lLPvo18sQ9j6K+KlvTDMeevDv36wk2/o7c4PbTtFiqgc2LuoSNJDIR5EUkXaMtjqovwDCqd+wd+RG9gpWfffvS0LvOQHkJvGztlDKOd532s4G/S4RvlobLHoTF0jM+oSbGcLtpIpv83CgP5nNAuB0gwpCCbsV2Wh9FtPydVFeHVPy+ZkGqb0C8wJcKQO5XnvJLvIIyny1UtKakpCkM5LdJX+XLtGUNoWzN8dD09C3gFe8WcG57IjfSSZpI4O8VY86NJNH8jCfUt8N52oEc5KyIUhZBcT5JBVPuto7KZRXLeV4KwY7E6/u0nksbSE7ydoTgfduevrw9oNsu6Z8y16ullw/M4hZ42jIxPE5b9MyrzzbO862WOx/1ZCQyzoWyPV7EdjVxH3r2PacCBiB+j5/+BqiQlNUVhgLX6FcMyT0p8H8NQelk9SD4S4xlYJQpPCf0E6KM6k6GhLhH7v0QCvIaE+RTDSYUoPGtNS4SVnQ1VvNejWTdQPL3oKRWL2FAOhOH+R2JKcl77Pam4Y6Hw0U/5W9bxZVxOOmxjHg2DHjQgotCNxtAcie6DdL+LmM8z6sNzw9DoymsMjzGeWhrulaDfDfd/m6ojJTVFcRRqLs8JYaFDqADhUaFf4n2GfrbIciys0J86nuDhWaxXZEfuzeUL6G0lwVyST58IsupJJbg4S/0gzLhAgn4bjLeaQAW6qojvyJX0UBHSfSNi31f429uzrbtkQrZRqKb3fDi9s70leZKIkICRkYjQ4S9j9oNh0pZEujKLgeUju/IYchtOQgM5n00DDZ73oHXoHUTUYKHoLD5KaoqCYD+VLhKdAu0CIav3JOjzGkZl8gsq+eNijjnO8dr+QJLZKELhXkzlZ722m7lv64jzr3SUgg9ImLiJ4Z3dPF4nyPhyWXNslTj10ujUD0Kio+gZ7Mh7KhR1Ia8SxBWVtIGEECQZnCVr9u8gjIWMufERx37Le0FdItyMoRP9aKAUgrslSOxBmY7xbB9Iw2RiFk/kXfFnu+LZzZemwwAsYFjsSmPrWMpAeoMnZWn7jaHnfnBMO7P75zL0wbbJfIZJ6AQH6xA0+7FlAmnke0iQSNGWXhemOIoaA4QMvd9LEJ6E12THTy3lMvpnkLH3fMiitunq+A99KUfwBX484sUeRMUGJdmBXstD4k8sQfkP4vIhJAdf39kYejH/ZFmg8H4mQcbapZLJtAxjRyrIrvTQppJskAaPNOyxkkm0SPpu7CtBSnwZn8EUiR+bVEPi+Bfv5xIS64n0hI8Rf//YNrxWZ5IG6msSSebPjjedZFwUyOZ41v8/+EwepSEwmORyP8u4Ogs5oi/sXnrq8FwO5bM6xLM/2i76aCslk2yT5jOZy7aE89ziGCXteb4d+FyHsf42JiHOCBkq7Vhv3Xk9tAMkDfnGbpbT8+3H9f34vOLmUd2I7Xhrln0wPe0vVUUpqSnyJ7UDJEhXTvNFr40hNfSZzKTC6OyQGpTlBL7Qfaj4XVJ7nwRmQ5T1VFRvRpDawzz/+fTc0H91YYQlaweHX02Fs6tEJ4QcRqV6As+Fchwt0anfQsWHFPR7qKwWOB7UhY7HkxTlrPclvIcfUllmI5a3WdfwsC7i/WCexb1ijoXSRF/ldXyGGOOGIRGn0pvdhZ5S0sG+K+j53k1yuIlt7EOS3JQczvEF2+RoyYw9xH31ZYTA14ZBkq/Tc/6I/3ehZ3ctn2Fbh9Ta0SObxrb6M/6PZ/mgx+Nvy/JjaMELLN/8LKQGorrGIcSZMaTWied/gs/xENaZkloLRiqdTud90MRJk7Xm1j9USH59BinJLZEjX1Q6Ib91/v2iMl3dwsq1I732SnrnUxOSfoO+NopSY9CA/nntr31qCot8O8HTJSpH3XpUp+kWSGjWQ0dfahW9tFGSmXmjZ47nUEJTtEgoqSkU303AO0M4bYEE/Vroc32SXpxCoaSmUCjWOSBJApMuoy8P84Sir+wRrRbFuoxEfWoKhUKhUKinplAoFAqFkppCoVAoFEpqCoVCofgO4f8CDAAQCp8eYzojCAAAAABJRU5ErkJggg==" alt="" />
+			</td>
+		</tr>
+		<tr>
+			<td class="bg_white email-section">
+				<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td valign="top" width="50%">
+							<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+								<tr>
+									<td>
