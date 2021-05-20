@@ -75,6 +75,7 @@ class Module implements VersionProviderInterface
                     if ($controller instanceof \Applications\Controller\ManageController
                         && 'detail' == $event->getRouteMatch()->getParam('action')
                         && 200 == $event->getResponse()->getStatusCode()
+                        && isset($result['application'])
                     ) {
                         $result = $event->getResult();
                         if (!is_array($result)) {
