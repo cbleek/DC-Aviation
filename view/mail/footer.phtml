@@ -6,21 +6,27 @@
  * @copyright (c) 2021 Cross Solution (http://cross-solution.de)
  * @author bleek@cross-solution.de
  * @license   MIT
+ * phpcs:disable
  */
+
+use Auth\Entity\User;
+
 /*
  * Mail footer used in various mails via <?php echo $this->partial('mail/footer'); ?>
  */
-
-/* @var \Core\Options\ModuleOptions $options */
-$options = $this->services('Core/Options');
-$siteName = $options->getSiteName();
-$operator = $options->getOperator();
-
 ?>
 									<br>
 									<p style="<?=$this->style?>">
-										mit freundlichen Grüßen<br>
-										HR-Team
+                                        mit freundlichen Grüßen<br>
+                                        <?php
+                                            /** @var User $user */
+                                            $user = $this->auth()->isLoggedIn() ? $this->auth()->getUser() : false;
+                                            if ($user && $user->getRole() != User::ROLE_USER):?>
+                                            <?=$user->getInfo()->getDisplayName(false) ?: 'HR-Team'?>
+                                            <?=($phone = $user->getInfo()->getPhone()) ? "<br>$phone" : '' ?>
+                                        <?php else: ?>
+                                        HR-Team
+                                        <?php endif ?>
 									</p>
 									<p style="<?=$this->style?>">
 										DC Aviation GmbH<br>
