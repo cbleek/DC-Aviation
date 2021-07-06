@@ -20,10 +20,14 @@ use Auth\Entity\User;
                                         mit freundlichen Grüßen<br>
                                         <?php
                                             /** @var User $user */
-                                            $user = $this->auth()->isLoggedIn() ? $this->auth()->getUser() : false;
-                                            if ($user && $user->getRole() != User::ROLE_USER):?>
+                                            $hasUser =
+                                                $this->auth()->isLoggedIn()
+                                                && ($user = $this->auth()->getUser())
+                                                && $user->getRole() != User::ROLE_USER
+                                            ;
+                                            if ($hasUser):?>
                                             <?=$user->getInfo()->getDisplayName(false) ?: 'HR-Team'?>
-                                            <?=($phone = $user->getInfo()->getPhone()) ? "<br>$phone" : '' ?>
+
                                         <?php else: ?>
                                         HR-Team
                                         <?php endif ?>
@@ -32,10 +36,11 @@ use Auth\Entity\User;
 										DC Aviation GmbH<br>
 										Stuttgart Airport<br>
 										70629 Stuttgart, Germany<br>
-										Phone +49 711 933 06-300<br>
-										Fax +49 711 933 06-473<br>
-										career@dc-aviation.com<br>
-										www.dc-aviation.com
+										Phone <?=$hasUser && ($phone = $user->getInfo()->getPhone()) ? $phone : '+49 711 933 06-300' ?><br>
+                                        Fax +49 711 933 06-473<br>
+                                        <?php $mail = $hasUser && ($mail = $user->getInfo()->getEmail()) ? $mail : 'career@dc-aviation.com'; ?>
+										Mail <?=$this->link($mail)?><br>
+										<?=$this->link("https://www.dc-aviation.com")?><br>
 									</p>
 									<p style="<?=$this->style?>">
 										Managing Directors: Michael K. Kuhn (CEO), Marc Ambrosius (CFO)<br>
