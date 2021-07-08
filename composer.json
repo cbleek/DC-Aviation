@@ -29,6 +29,7 @@
         "yawik/organizations": "^0.35",
         "yawik/pdf": "^0.35",
         "yawik/composer-plugin": "^3.0",
+        "yawik/form2mail": "dev-master",
         "laminas/laminas-dependency-plugin": "^2.0  "
     },
     "require-dev": {

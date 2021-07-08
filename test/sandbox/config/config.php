@@ -12,6 +12,7 @@ return [
         'Applications',
         'Organizations',
         'Geo',
+        'Form2Mail',
         'Aviation',
     ],
 ];
