@@ -30,18 +30,16 @@ class ApplicationStatusMailTemplates
                 vielen Dank für Ihre Bewerbung, über die wir uns sehr gefreut haben.
 
                 Wir werden uns nach Durchsicht Ihrer Bewerbungsunterlagen wieder mit Ihnen in Verbindung setzen.
-
                 Bis dahin bitten wir Sie um etwas Geduld.
                 TMPL,
 
             'en' => <<<TMPL
                 ##salutation_formal##,
 
-                Thank you very much for your application which we were delighted to receive.
+                thank you very much for your application which we were delighted to receive.
 
                 We will get in touch with you again after reviewing your application documents.
-
-                Until then, we kindly ask you for a little patience. 
+                Until then, we kindly ask you for a little patience.
                 TMPL,
             'en_subject' => 'Your application dated %s',
         ],
@@ -82,7 +80,7 @@ class ApplicationStatusMailTemplates
             'en' => <<<TMPL
                 ##salutation_formal##,
 
-                We would once again like to thank you sincerely for your application and for the associated interest in our company.
+                we would once again like to thank you sincerely for your application and for the associated interest in our company.
 
                 Due to the high number of qualified applications, taking a screening decision has not been easy for us.
 
@@ -96,7 +94,7 @@ class ApplicationStatusMailTemplates
             'de' => <<<TMPL
                 ##anrede_formell##,
 
-                Die Vorauswahl für die ausgeschriebene Stelle/Funktion ist nun abgeschlossen.
+                die Vorauswahl für die ausgeschriebene Stelle/Funktion ist nun abgeschlossen.
 
                 Im nächsten Schritt möchten wir Sie daher gerne persönlich kennen lernen.
 
@@ -105,7 +103,7 @@ class ApplicationStatusMailTemplates
             'en' => <<<TMPL
                 ##salutation_formal##,
 
-                The screening for the advertised position/function is now complete.
+                the screening for the advertised position/function is now complete.
 
                 We are pleased to inform you that your personal and professional profile has piqued our interest.
 
