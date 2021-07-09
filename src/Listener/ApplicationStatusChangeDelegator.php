@@ -16,8 +16,10 @@ use Applications\Entity\StatusInterface;
 use Applications\Listener\Events\ApplicationEvent;
 use Applications\Listener\StatusChange;
 use Applications\Options\ModuleOptions;
+use Auth\AuthenticationService;
 use Aviation\Entity\ApplicationStatusMailTemplates;
 use Aviation\Mail\ApplicationStatusChange;
+use Core\Exception\MissingDependencyException;
 use Core\Mail\MailService;
 
 /**
@@ -33,6 +35,7 @@ class ApplicationStatusChangeDelegator
     private $templates;
     private $mails;
     private $options;
+    private $authService;
 
     public function __construct(
         StatusChange $listener,
@@ -104,7 +107,13 @@ class ApplicationStatusChangeDelegator
         $mail->setBody($body);
         $mail->setTo($recipient);
 
-        if ($from = $application->getJob()->getContactEmail()) {
+        $from = $this->getAuthService()->getUser()->getInfo()->getEmail();
+
+        if (!$from) {
+            $from = $application->getJob()->getContactEmail();
+        }
+
+        if ($from) {
             $mail->setFrom($from, $application->getJob()->getCompany());
         }
 
@@ -159,5 +168,29 @@ class ApplicationStatusChangeDelegator
         $name  = $recipient->getDisplayName(false);
 
         return $name ? [ $email => $name ] : [ $email ];
+    }
+
+    /**
+     * Get authService
+     *
+     * @return AuthenticationService
+     */
+    public function getAuthService()
+    {
+        if (!$this->authService) {
+            throw new MissingDependencyException(AuthenticationService::class, $this);
+        }
+
+        return $this->authService;
+    }
+
+    /**
+     * Set authService
+     *
+     * @param mixed $authService
+     */
+    public function setAuthService(AuthenticationService $authService): void
+    {
+        $this->authService = $authService;
     }
 }

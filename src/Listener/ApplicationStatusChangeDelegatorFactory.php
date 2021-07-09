@@ -25,11 +25,17 @@ class ApplicationStatusChangeDelegatorFactory implements DelegatorFactoryInterfa
 {
     public function __invoke(ContainerInterface $container, $name, callable $callback, ?array $options = null)
     {
-        return new ApplicationStatusChangeDelegator(
+        $service = new ApplicationStatusChangeDelegator(
             $callback(),
             $container->get(ApplicationStatusMailTemplates::class),
             $container->get('Core/MailService'),
             $container->get('Applications/Options')
         );
+
+        $service->setAuthService(
+            $container->get('AuthenticationService')
+        );
+
+        return $service;
     }
 }
