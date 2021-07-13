@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc16067c6372cdb8d51d4491e6ef4379",
+    "content-hash": "e19e045bf183d03d8248b2e94fd248a4",
     "packages": [
         {
             "name": "alcaeus/mongo-php-adapter",
@@ -1911,16 +1911,16 @@
         },
         {
             "name": "laminas/laminas-cache",
-            "version": "2.11.2",
+            "version": "2.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-cache.git",
-                "reference": "f825aecc67f40e8bc499500373e5de700b95d00b"
+                "reference": "775cf8815cfd5a654f9b7b341ebaf28e72aa457d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-cache/zipball/f825aecc67f40e8bc499500373e5de700b95d00b",
-                "reference": "f825aecc67f40e8bc499500373e5de700b95d00b",
+                "url": "https://api.github.com/repos/laminas/laminas-cache/zipball/775cf8815cfd5a654f9b7b341ebaf28e72aa457d",
+                "reference": "775cf8815cfd5a654f9b7b341ebaf28e72aa457d",
                 "shasum": ""
             },
             "require": {
@@ -2005,7 +2005,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2021-06-03T19:18:41+00:00"
+            "time": "2021-07-08T18:22:59+00:00"
         },
         {
             "name": "laminas/laminas-cache-storage-adapter-apc",
@@ -8717,16 +8717,16 @@
         },
         {
             "name": "yawik/form2mail",
-            "version": "dev-master",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/Form2Mail.git",
-                "reference": "7a0f7f354848c80f28bc190c5cfbb4fbad7d1538"
+                "reference": "b74967a53de544d57a929cfd3ba41ba4d348e736"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/Form2Mail/zipball/7a0f7f354848c80f28bc190c5cfbb4fbad7d1538",
-                "reference": "7a0f7f354848c80f28bc190c5cfbb4fbad7d1538",
+                "url": "https://api.github.com/repos/yawik/Form2Mail/zipball/b74967a53de544d57a929cfd3ba41ba4d348e736",
+                "reference": "b74967a53de544d57a929cfd3ba41ba4d348e736",
                 "shasum": ""
             },
             "require": {
@@ -8750,7 +8750,6 @@
                 "yawik/application-pack": "^1.1",
                 "yawik/behat": "^0.34"
             },
-            "default-branch": true,
             "type": "yawik-module",
             "extra": {
                 "branch-alias": {
@@ -8790,7 +8789,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2021-07-08T16:51:33+00:00"
+            "time": "2021-07-13T06:58:53+00:00"
         },
         {
             "name": "yawik/geo",
@@ -11964,9 +11963,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "yawik/form2mail": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
