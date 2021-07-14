@@ -8717,16 +8717,16 @@
         },
         {
             "name": "yawik/form2mail",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/Form2Mail.git",
-                "reference": "b74967a53de544d57a929cfd3ba41ba4d348e736"
+                "reference": "726988a84d956995ff8ea8e5aa9291accd6f5942"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/Form2Mail/zipball/b74967a53de544d57a929cfd3ba41ba4d348e736",
-                "reference": "b74967a53de544d57a929cfd3ba41ba4d348e736",
+                "url": "https://api.github.com/repos/yawik/Form2Mail/zipball/726988a84d956995ff8ea8e5aa9291accd6f5942",
+                "reference": "726988a84d956995ff8ea8e5aa9291accd6f5942",
                 "shasum": ""
             },
             "require": {
@@ -8789,7 +8789,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2021-07-13T06:58:53+00:00"
+            "time": "2021-07-13T13:08:20+00:00"
         },
         {
             "name": "yawik/geo",
