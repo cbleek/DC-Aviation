@@ -129,6 +129,11 @@ return array(
         'invokables' => [
             'Jobs/Description' => 'Aviation\Form\JobsDescription',
         ],
+        'delegators' => [
+            'Applications\Form\Element\StatusSelect' => [
+                Form\ApplicationsStatusSelectDelegatorFactory::class,
+            ],
+        ],
     ],
 
     'form_elements_config' => [
