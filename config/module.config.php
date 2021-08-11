@@ -63,6 +63,12 @@ return array(
         ],
     ],
 
+    'controllers' => [
+        'factories' => [
+            Controller\DashboardController::class => InvokableFactory::class,
+        ],
+    ],
+
     'mails' => [
         'factories' => [
             Mail\ApplicationConfirmation::class => Mail\StringTemplateHtmlMailFactory::class,
@@ -179,4 +185,22 @@ return array(
         ]],
     ],
 
+    /*
+    * Module specific configurations
+    */
+
+    'Jobs' => [
+        'dashboard' => [
+            'widgets' => [
+                'recentJobs' => [
+                    'controller' => Controller\DashboardController::class,
+                    'params' => [
+                        'action' => 'jobs',
+                        'status' => \Jobs\Entity\StatusInterface::ACTIVE,
+                        'by' => 'me',
+                    ],
+                ],
+            ],
+        ],
+    ],
 );
