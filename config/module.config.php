@@ -203,4 +203,19 @@ return array(
             ],
         ],
     ],
+    'Applications' => [
+        'dashboard' => [
+            'widgets' => [
+                'recentApplications' => [
+                    'controller' => Controller\DashboardController::class,
+                    'params' => [
+                        'action' => 'applications',
+                        'sort' => '-date',
+                        'by' => 'me',
+                        'count' => 5,
+                    ],
+                ],
+            ],
+        ],
+    ],
 );

@@ -36,4 +36,17 @@ class DashboardController extends AbstractActionController
 
         return $model;
     }
+
+    public function applicationsAction()
+    {
+        $paginator = $this->paginator('Applications', $this->params()->fromRoute());
+
+        $model = new ViewModel([
+            'applications' => $paginator,
+
+        ]);
+        $model->setTemplate('applications/index/dashboard');
+
+        return $model;
+    }
 }
