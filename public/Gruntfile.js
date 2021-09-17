@@ -28,8 +28,8 @@ module.exports = function(grunt) {
             jobs: {
                 files: [
                     {
-                        src: "./view/jobs/templates/less/job.less",
-                        dest: "./view/jobs/templates/job.css"
+                        src: targetDir+"/modules/Aviation/templates/de/less/job.less",
+                        dest: targetDir+"/modules/Aviation/templates/de/job.css"
                     }
                 ]
             }
